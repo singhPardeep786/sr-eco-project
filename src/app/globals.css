@@ -28,6 +28,7 @@ body {
 }
 
 :root {
+  --lightmaincolor: #47a2b486;
   --maincolor: #47A1B4;
   --blue: #084C7A;
   --green: #23c6b1;
@@ -39,7 +40,7 @@ body {
   --gray: #cacbcc;
   --black: #000000;
   --white: #fff;
-  --ligthbg: #0e0d0d44;
+  --ligthbg: #57707444;
 }
 
 /*=============NAVBAR===START==========*/
@@ -97,7 +98,7 @@ body {
 .slide2 {
   width: 100%;
   height: 100%;
-  background: url('/images/play_lawn.jpg')no-repeat center center;
+  background: url('/images/wide_roads.jpg')no-repeat center center;
   background-size: cover;
   background-size: cover;
   overflow: hidden;
@@ -114,32 +115,25 @@ body {
 }
 
 .banner_content {
-  width: fit-content;
-  position: absolute;
-  top: 30%;
-  left: 45%;
-  transform: translate(-30%, -45%);
-}
-
-.banner_content {
-  width: fit-content;
-  /* background-color: var(--ligthbg); */
-  backdrop-filter: blur(2px);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  padding: 0 2rem;
+  width: clamp(350px, 50%, 390px);
+  background-color: var(--maincolor);
   border-radius: 20px;
-  transform: translate(-50%, -40%);
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  padding: 2rem;
+  transform: translate(-10%, -50%);
   transition: all ease .5s;
 }
 
 .banner_content h5 {
   font-size: 3rem;
   text-transform: uppercase;
-  color: var(--maincolor2);
+  color: var(--blue);
   transform: translateY(100%);
   transition: all ease 1s;
+  line-height: 2.5rem;
+  border-top-left-radius: 20px;
 }
 
 .banner_content h1 {
@@ -148,23 +142,36 @@ body {
   text-transform: uppercase;
   transform: translateY(-100%);
   transition: all ease 1s;
+  line-height: 2.5rem;
 }
 
-.small_heading {
+.swiper-fade .swiper-slide-active .banner_content h5 {
+  transform: translateY(0%);
+}
+
+.swiper-fade .swiper-slide-active .banner_content h1 {
+  transform: translateY(-0%);
+}
+
+/* .small_heading {
+  transform: translateX(0%);
   transition: all ease .7s;
 }
 
 .main_heading {
+  transform: translateX(0%);
   transition: all ease .7s;
 }
 
-.swiper-fade .swiper-slide-active .banner_content h5 {
-  transform: translateY(20%);
+.swiper-fade .swiper-slide-active .small_heading {
+  transition-delay: 1s;
+  transform: translateX(-10%);
 }
 
-.swiper-fade .swiper-slide-active .banner_content h1 {
-  transform: translateY(-20%);
-}
+.swiper-fade .swiper-slide-active .main_heading {
+  transition-delay: 1s;
+  transform: translateX(10%);
+} */
 
 .bottom-left {
   width: 300px;
@@ -341,21 +348,21 @@ body {
   }
 
   .banner_content {
-    width: 100%;
+    width: fit-content;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
     font-size: 1.6rem;
-    text-align: center;
+    line-height: 1.5rem;
   }
 
   .banner_content h1 {
     font-size: 1.6rem;
-    text-align: center;
+    line-height: 1.5rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -385,21 +392,21 @@ body {
   }
 
   .banner_content {
-    width: 100%;
+    width: fit-content;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
     font-size: 2rem;
-    text-align: center;
+    line-height: 2rem;
   }
 
   .banner_content h1 {
     font-size: 2rem;
-    text-align: center;
+    line-height: 2rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -428,21 +435,21 @@ body {
   }
 
   .banner_content {
-    width: 100%;
+    width: fit-content;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
     font-size: 2rem;
-    text-align: center;
+    line-height: 2rem;
   }
 
   .banner_content h1 {
     font-size: 2rem;
-    text-align: center;
+    line-height: 2rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -471,21 +478,21 @@ body {
   }
 
   .banner_content {
-    width: 70%;
+    width: 41%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .banner_content h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -507,6 +514,8 @@ body {
 @media (min-width:787px) and (max-width: 820px){
   .nav_bg {
     width: 100%;
+    background-color: var(--ligthbg);
+    backdrop-filter: blur(2px);
   }
   
   .logo{
@@ -514,21 +523,21 @@ body {
   }
 
   .banner_content {
-    width: 60%;
+    width: 41%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .banner_content h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -538,18 +547,20 @@ body {
   }
 
   .bottom-left{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .bottom-right{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 }
 
 @media (min-width:820px) and (max-width: 990px){
   .nav_bg {
     width: 100%;
+    background-color: var(--ligthbg);
+    backdrop-filter: blur(2px);
   }
   
   .logo{
@@ -557,21 +568,21 @@ body {
   }
 
   .banner_content {
-    width: 60%;
+    width: 37%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
-    padding: 0;
+    padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .banner_content h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -581,11 +592,11 @@ body {
   }
 
   .bottom-left{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .bottom-right{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 }

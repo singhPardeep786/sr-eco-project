@@ -26,13 +26,13 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav_bg py-3 ${
-        scrolled ? 'bg-white/55 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-[var(--lightmaincolor)] backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Flex: left menu, center logo, right menu button */}
-          <div className="flex items-center h-16 justify-between lg:justify-center relative">
+          <div className="flex items-center h-16 justify-between md:justify-center relative">
             {/* Desktop Menu - Left */}
-            <div className="hidden lg:flex flex-1 justify-end">
+            <div className="hidden md:flex flex-1 justify-end">
               <div className="flex items-baseline space-x-8">
                 {menuItems.slice(0, Math.ceil(menuItems.length / 2)).map((item, index) => (
                   <a
@@ -40,8 +40,8 @@ const Navbar = () => {
                     href={`#${item.toLowerCase()}`}
                     className={`px-3 py-2 text-[.8rem] uppercase font-bold transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled 
-                        ? 'text-[var(--green)]' 
-                        : 'text-gray-700'
+                        ? 'text-[var(--bodybg)]' 
+                        : 'text-white lg:text-gray-700'
                     }`}
                   >
                     {item}
@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="flex-shrink-0 z-10">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
                 <a href="/" className='inline-block w-fit'>
-                  <div className="logo mx-0 lg:mx-auto">
+                  <div className="logo mx-0 md:mx-auto">
                     <img src="/images/logo.png" className='w-full h-full' alt="SR Eco Park Logo" />
                   </div>
                 </a>
@@ -63,7 +63,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Menu - Right */}
-            <div className="hidden lg:flex flex-1 justify-start">
+            <div className="hidden md:flex flex-1 justify-start">
               <div className="flex items-baseline space-x-8">
                 {menuItems.slice(Math.ceil(menuItems.length / 2)).map((item, index) => (
                   <a
@@ -71,8 +71,8 @@ const Navbar = () => {
                     href={`#${item.toLowerCase()}`}
                     className={`px-3 py-2 text-[.8rem] uppercase font-bold transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled 
-                        ? 'text-[var(--green)]' 
-                        : 'text-gray-700'
+                        ? 'text-[var(--bodybg)]' 
+                        : 'text-white lg:text-gray-700'
                     }`}
                   >
                     {item}
@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile/Tablet menu button - Right */}
-            <div className="lg:hidden flex flex-1 justify-end">
+            <div className="md:hidden flex flex-1 justify-end">
               <button
                 onClick={toggleMenu}
                 className={`relative w-8 h-8 flex flex-col justify-center items-center transition-all duration-300 ${
@@ -113,7 +113,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile/Tablet Menu Overlay */}
-        <div className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
+        <div className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${
           isOpen ? 'visible' : 'invisible'
         }`}>
           <div 
