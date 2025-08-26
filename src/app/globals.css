@@ -28,7 +28,7 @@ body {
 
 *::selection {
   background-color: var(--maincolor);
-  color: #000000;
+  color: var(--white);
 }
 
 *::-webkit-scrollbar {
@@ -43,7 +43,7 @@ body {
 }
 
 :root {
-  --lightmaincolor: #47a2b486;
+  --lightmaincolor: #084c7a48;
   --maincolor: #47A1B4;
   --blue: #084C7A;
   --green: #23c6b1;
@@ -55,7 +55,20 @@ body {
   --gray: #cacbcc;
   --black: #000000;
   --white: #fff;
-  --ligthbg: #57707444;
+  --lightbg: #57707444;
+  --blacktransparent: #00000044;
+}
+
+.light {
+  font-family: 'light';
+}
+
+.medium {
+  font-family: 'medium';
+}
+
+.heavy {
+  font-family: 'bold';
 }
 
 /*=============NAVBAR===START==========*/
@@ -71,6 +84,12 @@ body {
   margin-top: .5rem;
   border-radius: 20px;
   overflow: hidden;
+  background-color: var(--white);
+}
+
+.links {
+  font-family: 'light';
+  font-weight: 900;
 }
 
 @keyframes slideIn {
@@ -107,7 +126,7 @@ body {
 .slide1 {
   width: 100%;
   height: 100%;
-  background: url('/images/entrance.jpg')no-repeat center center;
+  background: url('/images/outdoors/entrance.jpg')no-repeat center center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -116,7 +135,7 @@ body {
 .slide2 {
   width: 100%;
   height: 100%;
-  background: url('/images/wide_roads.jpg')no-repeat center center;
+  background: url('/images/outdoors/wide_roads.jpg')no-repeat center center;
   background-size: cover;
   background-size: cover;
   overflow: hidden;
@@ -145,7 +164,7 @@ body {
 }
 
 .banner_content h5 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-transform: uppercase;
   color: var(--blue);
   transform: translateY(100%);
@@ -155,7 +174,7 @@ body {
 }
 
 .banner_content h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--white);
   text-transform: uppercase;
   transform: translateY(-100%);
@@ -330,6 +349,7 @@ body {
   width: 10rem!important;
   height: 10px!important;
   border-radius: 50px!important;
+  border: 1px dashed var(--gray)!important;
   background-color: var(--white)!important;
   transition: width .7s ease;
 }
@@ -344,11 +364,45 @@ body {
 /*=============INTRO===SECTION===START==========*/
 
 .intro_bg {
-  background: url('/images/party_deck.jpg')no-repeat center center;
+  background: url('/images/outdoors/intro_bg.jpg')no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   overflow: hidden;
   position: relative;
+  z-index: 2;
+}
+
+.intro_content_box {
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--white);
+  position: relative;
+}
+
+/* .intro_content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: var(--white);
+} */
+
+.intro_content h2 {
+  color: var(--green2);
+  font-size: 2rem;
+  font-family: 'medium';
+  line-height: 2.2rem;
+}
+
+.intro_overlay {
+  width: 100%;
+  height: 100%;
+  background-color: var(--blacktransparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /*=============INTRO===SECTION===END==========*/
@@ -397,6 +451,21 @@ body {
     width: 120px;
     height: 120px;
   }
+
+  .intro_content {
+    /* padding: .7rem; */
+  }
+  
+  .intro_content h2 {
+    font-size: 1.35rem;
+    line-height: 1.5rem;
+  }
+
+  .intro_content p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+  
 }
 
 @media (min-width:451px) and (max-width: 600px){
@@ -532,7 +601,7 @@ body {
 @media (min-width:787px) and (max-width: 820px){
   .nav_bg {
     width: 100%;
-    background-color: var(--ligthbg);
+    background-color: var(--lightbg);
     backdrop-filter: blur(2px);
   }
   
@@ -577,7 +646,7 @@ body {
 @media (min-width:820px) and (max-width: 990px){
   .nav_bg {
     width: 100%;
-    background-color: var(--ligthbg);
+    background-color: var(--lightbg);
     backdrop-filter: blur(2px);
   }
   

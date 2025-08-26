@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Keyboard, Pagination } from "swiper/modules";
@@ -32,7 +33,7 @@ const Banner = () => {
         effect="fade"
         speed={1200}
         loop = {true}
-        // autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="mySwiper h-full"
       >
        
@@ -52,17 +53,17 @@ const Banner = () => {
             <div className="scroll_downIcon_section flex items-center justify-center w-full">
               <div className="arrow_main_box">
                 <div>
-                  <a href="#intro">
                     <span className="arrow_icon flex items-center justify-center">
                       <Icon icon="line-md:arrow-down" width="24" height="24" />
                     </span>
-                  </a>
+                  {/* <a href="#">
+                  </a> */}
                 </div>
                 <div>
-                  <a href="#intro">
                     <span className="scroll_arrow_div flex items-center justify-center">
                     </span>
-                  </a>
+                  {/* <a href="#">
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -82,18 +83,18 @@ const Banner = () => {
             <span className="bottom-right"></span>
             <div className="scroll_downIcon_section flex items-center justify-center w-full">
               <div className="arrow_main_box">
-                <div>
-                  <a href="#intro">
+              <div>
                     <span className="arrow_icon flex items-center justify-center">
                       <Icon icon="line-md:arrow-down" width="24" height="24" />
                     </span>
-                  </a>
+                  {/* <a href="#">
+                  </a> */}
                 </div>
                 <div>
-                  <a href="#intro">
                     <span className="scroll_arrow_div flex items-center justify-center">
                     </span>
-                  </a>
+                  {/* <a href="#">
+                  </a> */}
                 </div>
               </div>
             </div>

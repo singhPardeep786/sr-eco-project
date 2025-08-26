@@ -6,7 +6,7 @@ import Introduction from '@/components/introduction/Introduction'
 
 const Page = () => {
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{ duration: 2 }}>
       <div>
         <Navbar />
         <Banner />

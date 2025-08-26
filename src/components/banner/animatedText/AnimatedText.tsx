@@ -1,3 +1,5 @@
+"use client";
+
 import { TextSlider } from "@/components/ui/text-slider"
 
 export function AnimatedText() {

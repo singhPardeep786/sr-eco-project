@@ -38,9 +38,9 @@ const Navbar = () => {
                   <a
                     key={index}
                     href={`#${item.toLowerCase()}`}
-                    className={`px-3 py-2 text-[.8rem] uppercase font-bold transition-all duration-300 hover:scale-105 relative group rounded-md ${
+                    className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled 
-                        ? 'text-[var(--bodybg)]' 
+                        ? 'text-[var(--white)]' 
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
@@ -56,7 +56,7 @@ const Navbar = () => {
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
                 <a href="/" className='inline-block w-fit'>
                   <div className="logo mx-0 md:mx-auto">
-                    <img src="/images/logo.jpg" className='w-full h-full' alt="SR Eco Park Logo" />
+                    <img src="/images/logo.png" className='w-full h-full' alt="SR Eco Park Logo" />
                   </div>
                 </a>
               </div>
@@ -69,9 +69,9 @@ const Navbar = () => {
                   <a
                     key={index + Math.ceil(menuItems.length / 2)}
                     href={`#${item.toLowerCase()}`}
-                    className={`px-3 py-2 text-[.8rem] uppercase font-bold transition-all duration-300 hover:scale-105 relative group rounded-md ${
+                    className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled 
-                        ? 'text-[var(--bodybg)]' 
+                        ? 'text-[var(--white)]' 
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
