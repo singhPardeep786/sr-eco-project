@@ -141,7 +141,7 @@ const Introduction = () => {
             toggleActions: "play reverse play reverse",
           }
         },
-        "-=0.6"
+        "-=0.7"
       );
 
       // Update animation on resize for all screens
@@ -170,8 +170,8 @@ const Introduction = () => {
         <section className="wrapper">
           <div className='intro_content_box flex items-center justify-center relative'>
             <div className="intro_content p-5 rounded-2xl flex items-center justify-center flex-col text-center">
-              <h2>Premium residential plots <br /> to build homes, lives and legacies</h2>
-              <p className='light text-gray-500 mt-3'>In an era where apartment living has become increasingly common and people are seeking respite from the concrete jungle, the desire to build a home of dreams in a peaceful, picturesque setting has become stronger than ever</p>
+              <h2 className='text-white'>Premium residential plots <br /> to build homes, lives and legacies</h2>
+              <p className='light'>In an era where apartment living has become increasingly common and people are seeking respite from the concrete jungle, the desire to build a home of dreams in a peaceful, picturesque setting has become stronger than ever</p>
             </div>
           </div>
         </section>

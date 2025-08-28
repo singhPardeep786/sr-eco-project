@@ -44,6 +44,7 @@ body {
 
 :root {
   --lightmaincolor: #084c7a48;
+  --bordercolor: #47a2b460;
   --maincolor: #47A1B4;
   --blue: #084C7A;
   --green: #23c6b1;
@@ -55,6 +56,7 @@ body {
   --gray: #cacbcc;
   --black: #000000;
   --white: #fff;
+  --whitetransparent: #ffffff7e;
   --lightbg: #57707444;
   --blacktransparent: #00000044;
 }
@@ -375,8 +377,10 @@ body {
 .intro_content_box {
   margin: 0 auto;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: var(--blacktransparent);
+  backdrop-filter: blur(5px);
   position: relative;
+  border: 5px solid var(--maincolor);
 }
 
 /* .intro_content {
@@ -389,10 +393,15 @@ body {
 } */
 
 .intro_content h2 {
-  color: var(--green2);
+  /* color: var(--maincolor); */
   font-size: 2rem;
   font-family: 'medium';
   line-height: 2.2rem;
+}
+
+.intro_content p {
+  color: var(--white);
+  margin-top: 1rem;
 }
 
 .intro_overlay {
@@ -406,6 +415,37 @@ body {
 }
 
 /*=============INTRO===SECTION===END==========*/
+
+
+/*=============FEATURES===SECTION===START==========*/
+
+.section_heading {
+  font-size: 3rem;
+}
+
+.features_box {
+  width: 25%;
+  height: 250px;
+  background: linear-gradient(315deg, var(--maincolor), var(--blue)) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 20px;
+}
+
+.features_icon .icon {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.features_box h5 {
+  font-family: 'light';
+  color: var(--white);
+}
+
+/*=============FEATURES===SECTION===END==========*/
 
 /*=============RESPONSIVE===CODES===SECTION===START==========*/
 
