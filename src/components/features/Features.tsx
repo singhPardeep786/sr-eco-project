@@ -1,7 +1,9 @@
 "use client"
 import { Icon } from '@iconify/react/dist/iconify.js'
-import React, { useState } from 'react'
+import React, { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
 
+// 30 features as before
 const baseBoxes = [
   {
     className: "features_box",
@@ -155,75 +157,243 @@ const baseBoxes = [
   },
 ];
 
-// Generate 30 boxes by repeating baseBoxes, but do not add numbers to desc
-const totalBoxes = Array.from({ length: 30 }, (_, i) => {
-  const base = baseBoxes[i % baseBoxes.length];
-  return {
-    ...base,
-    desc: base.desc
-  };
-});
-
-// Helper to chunk array into groups of 3
-function chunkArray(arr: any[], size: number) {
-  const result = [];
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
-  return result;
-}
+// Split into two rows of 15
+const row1 = baseBoxes.slice(0, 15);
+const row2 = baseBoxes.slice(15, 30);
 
 const Features = () => {
-  const [visibleCount, setVisibleCount] = useState(6);
-  const [previousCount, setPreviousCount] = useState(6);
+  // For accessibility, pause animation on hover/focus
+  const row1Ref = useRef<HTMLDivElement | null>(null);
+  const row2Ref = useRef<HTMLDivElement | null>(null);
 
-  const handleLoadMore = () => {
-    setPreviousCount(visibleCount);
-    setVisibleCount((prev) => Math.min(prev + 3, 30));
+  // GSAP: Animation speed state
+  // Instead of a number, use an object so GSAP can animate its property
+  const animationSpeed = useRef<{ value: number }>({ value: 32 }); // seconds, default
+
+  // Store animation style elements for cleanup
+  const styleElRef = useRef<HTMLStyleElement | null>(null);
+
+  // Helper to update animation duration in CSS
+  const updateAnimationDuration = (duration: number) => {
+    // Remove previous style if exists
+    if (styleElRef.current) {
+      styleElRef.current.remove();
+      styleElRef.current = null;
+    }
+    // Create new style element
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .features-reel-row-1 {
+        animation: features-reel-left ${duration}s linear infinite;
+      }
+      .features-reel-row-2 {
+        animation: features-reel-right ${duration}s linear infinite;
+      }
+    `;
+    document.head.appendChild(style);
+    styleElRef.current = style;
   };
 
-  // Only show up to visibleCount
-  const visibleBoxes = totalBoxes.slice(0, visibleCount);
-  const rows = chunkArray(visibleBoxes, 3);
+  useEffect(() => {
+    // Accepts HTMLDivElement, not RefObject
+    const handlePause = (el: HTMLDivElement | null, pause: boolean) => {
+      if (el) {
+        el.style.animationPlayState = pause ? 'paused' : 'running';
+      }
+    };
+    const r1 = row1Ref.current;
+    const r2 = row2Ref.current;
+    if (!r1 || !r2) return;
+
+    const pause = () => {
+      handlePause(r1, true);
+      handlePause(r2, true);
+    };
+    const play = () => {
+      handlePause(r1, false);
+      handlePause(r2, false);
+    };
+
+    r1.addEventListener('mouseenter', pause);
+    r1.addEventListener('mouseleave', play);
+    r2.addEventListener('mouseenter', pause);
+    r2.addEventListener('mouseleave', play);
+
+    // For keyboard accessibility
+    r1.addEventListener('focusin', pause);
+    r1.addEventListener('focusout', play);
+    r2.addEventListener('focusin', pause);
+    r2.addEventListener('focusout', play);
+
+    // GSAP: Scroll speed up effect
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    let baseDuration = 32; // seconds
+    let fastDuration = 18; // seconds (faster)
+    let timeoutId: number | null = null;
+
+    // Set initial animation duration
+    updateAnimationDuration(baseDuration);
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+
+          // If user is scrolling down (or up), speed up
+          if (scrollDelta > 5) {
+            // Animate to fast duration using GSAP
+            gsap.to(animationSpeed.current, {
+              value: fastDuration,
+              duration: 0.5,
+              onUpdate: () => {
+                updateAnimationDuration(animationSpeed.current.value);
+              }
+            });
+            // Reset to base after 1.2s of no scroll
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = window.setTimeout(() => {
+              gsap.to(animationSpeed.current, {
+                value: baseDuration,
+                duration: 1.2,
+                onUpdate: () => {
+                  updateAnimationDuration(animationSpeed.current.value);
+                }
+              });
+            }, 1200);
+          }
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Set initial value
+    animationSpeed.current.value = baseDuration;
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      r1.removeEventListener('mouseenter', pause);
+      r1.removeEventListener('mouseleave', play);
+      r2.removeEventListener('mouseenter', pause);
+      r2.removeEventListener('mouseleave', play);
+      r1.removeEventListener('focusin', pause);
+      r1.removeEventListener('focusout', play);
+      r2.removeEventListener('focusin', pause);
+      r2.removeEventListener('focusout', play);
+      window.removeEventListener('scroll', onScroll);
+      if (styleElRef.current) {
+        styleElRef.current.remove();
+        styleElRef.current = null;
+      }
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <>
+      <style>{`
+        .features-reel-row {
+          display: flex;
+          flex-direction: row;
+          gap: 1.25rem;
+          width: max-content;
+          min-width: 100vw;
+          will-change: transform;
+        }
+        .features-reel-outer {
+          overflow: hidden;
+          width: 100%;
+          position: relative;
+        }
+        /* The animation duration for .features-reel-row-1 and .features-reel-row-2
+           will be dynamically injected via JS for scroll speed effect */
+        @keyframes features-reel-left {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0%); }
+        }
+        @keyframes features-reel-right {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 900px) {
+          .features-reel-row {
+            gap: 0.75rem;
+          }
+        }
+        @media (max-width: 600px) {
+          .features-reel-row {
+            gap: 0.5rem;
+          }
+          .features_box {
+            min-width: 180px;
+            height: 170px;
+            font-size: 0.95rem;
+          }
+          .features_icon .icon {
+            font-size: 2.1rem;
+          }
+        }
+        @media (max-width: 450px) {
+          .features_box {
+            min-width: 140px;
+            height: 140px;
+            font-size: 0.85rem;
+          }
+          .features_icon .icon {
+            font-size: 1.5rem;
+          }
+        }
+      `}</style>
       <section className='wrapper my-8'>
-        <h2 className='text-center uppercase section_heading mt-5 transition-all duration-500'>features</h2>
-        <div className='flex flex-col items-center justify-center gap-3 w-full'>
-          {rows.map((row, rowIdx) => (
+        <h2 className='text-center uppercase section_heading mt-5 transition-all duration-500 text-[var(--blue)]'>features</h2>
+        <div className="flex flex-col gap-6 items-center w-full mt-8">
+          {/* Row 1: left to right */}
+          <div className="features-reel-outer" tabIndex={0}>
             <div
-              className="flex flex-row items-center justify-center gap-3 w-full"
-              key={rowIdx}
+              className="features-reel-row features-reel-row-1"
+              ref={row1Ref}
+              aria-label="Feature highlights row 1"
             >
-              {row.map((box, idx) => {
-                const globalIdx = rowIdx * 3 + idx;
-                const isNew = globalIdx >= previousCount && globalIdx < visibleCount;
-                return (
-                  <div
-                    className={`${box.className} mt-1 ${isNew ? 'fade-in-up' : ''}`}
-                    key={idx}
-                  >
-                    <div className="features_icon">
-                      {box.icon}
-                    </div>
-                    <h5 className='capitalize font-bold'>{box.desc}</h5>
+              {[...row1, ...row1].map((box, idx) => (
+                <div
+                  className={`${box.className} min-w-[220px] md:w-[220px] flex-shrink-0 flex-grow-0`}
+                  key={`row1-${idx}`}
+                  tabIndex={-1}
+                >
+                  <div className="features_icon">
+                    {box.icon}
                   </div>
-                );
-              })}
+                  <h5 className='capitalize font-bold'>{box.desc}</h5>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        {visibleCount < 30 && (
-          <div className="flex justify-center mt-3">
-            <button
-              className="px-6 py-3 w-[75%] bg-[var(--blue)] text-white rounded-lg font-semibold hover:bg-transparent hover:border hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all duration-500 active:border-0 focus:border-0 focus:outline-none cursor-pointer"
-              onClick={handleLoadMore}
-            >
-              Load More
-            </button>
           </div>
-        )}
+          {/* Row 2: right to left */}
+          <div className="features-reel-outer" tabIndex={0}>
+            <div
+              className="features-reel-row features-reel-row-2"
+              ref={row2Ref}
+              aria-label="Feature highlights row 2"
+            >
+              {[...row2, ...row2].map((box, idx) => (
+                <div
+                  className={`${box.className} min-w-[220px] md:w-[220px] flex-shrink-0 flex-grow-0`}
+                  key={`row2-${idx}`}
+                  tabIndex={-1}
+                >
+                  <div className="features_icon">
+                    {box.icon}
+                  </div>
+                  <h5 className='capitalize font-bold'>{box.desc}</h5>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </>
   )

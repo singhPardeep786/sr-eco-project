@@ -1,12 +1,22 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react'
+import { Fancybox } from "@fancyapps/ui";
 
 const MasterPlan = () => {
   const [isOpen, setIsOpen] = useState(false);
   const panzoomRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
+  // Bind Fancybox once
+  useEffect(() => {
+    Fancybox.bind("[data-fancybox='masterplan']");
+    return () => {
+      Fancybox.destroy();
+    }
+  }, []);
+
   // Panzoom state
+
   const [isPanning, setIsPanning] = useState(false);
   const [origin, setOrigin] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [translate, setTranslate] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -109,56 +119,59 @@ const MasterPlan = () => {
     }
   }, [isOpen]);
 
+  // Animations for modal and image
+  const modalAnimation = isOpen
+    ? {
+        animation: 'fadeInModal 0.35s cubic-bezier(.4,0,.2,1)',
+      }
+    : {};
+
+  const imageAnimation = isOpen
+    ? {
+        animation: 'zoomInImage 0.5s cubic-bezier(.4,0,.2,1)',
+      }
+    : {};
+
   return (
     <>
-      <section className='wrapper'>
-        <h2 className='text-center section_heading mt-8'>Master Plan</h2>
-        <div className="master_plan w-[80%] mx-auto">
-          <div
-            onClick={() => setIsOpen(true)}
-            style={{ cursor: 'zoom-in', display: 'inline-block', width: '100%' }}
+    <section className='wrapper relative'>
+      <section className="masterplan-section">
+        <h2 className="masterplan-title">Master Plan</h2>
+        <div className="masterplan-divider" />
+        <div className="w-full flex flex-col items-center">
+          <a
+            href="/images/master_plan/master_plan.jpg"
+            data-fancybox="masterplan"
+            data-caption="SR Eco Park Master Plan"
+            className="w-full"
+            style={{
+              width: '100%',
+              maxWidth: 700,
+              margin: '0 auto',
+              marginBottom: 12,
+              marginTop: 8,
+              cursor: 'zoom-in',
+            }}
           >
             <img
               src="/images/master_plan/master_plan.jpg"
-              className='w-full h-auto'
-              alt="sr eco park master plan"
-              style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 2px 16px rgba(0,0,0,0.15)' }}
+              className="masterplan-img"
+              alt="SR Eco Park Master Plan"
             />
-          </div>
-          <div className="text-center mt-2 text-sm text-gray-500">
-            Click to view and zoom the master plan
-          </div>
+          </a>
         </div>
         {isOpen && (
           <div
-            style={{
-              position: 'fixed',
-              zIndex: 1000,
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              background: 'rgba(0,0,0,0.85)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden',
-            }}
+            className="masterplan-modal-bg"
+            style={modalAnimation}
             onClick={() => setIsOpen(false)}
           >
             <div
               ref={panzoomRef}
+              className="masterplan-modal-img"
               style={{
-                maxWidth: '90vw',
-                maxHeight: '90vh',
-                borderRadius: '16px',
-                boxShadow: '0 4px 32px rgba(0,0,0,0.25)',
-                background: 'white',
                 cursor: isPanning ? 'grabbing' : 'grab',
-                overflow: 'hidden',
-                position: 'relative',
-                touchAction: 'none',
-                userSelect: 'none',
+                ...imageAnimation,
               }}
               onMouseDown={e => {
                 e.stopPropagation();
@@ -183,94 +196,57 @@ const MasterPlan = () => {
               <img
                 ref={imgRef}
                 src="/images/master_plan/master_plan.jpg"
-                alt="sr eco park master plan enlarged"
+                alt="SR Eco Park Master Plan Enlarged"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
                   transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
-                  transition: isPanning ? 'none' : 'transform 0.2s',
-                  borderRadius: '16px',
+                  transition: isPanning ? 'none' : 'transform 0.25s cubic-bezier(.4,0,.2,1)',
+                  borderRadius: '20px',
                   userSelect: 'none',
-                  pointerEvents: 'none', // disables drag image ghost
+                  pointerEvents: 'none',
                   touchAction: 'none',
+                  background: 'linear-gradient(120deg, #f0f8ff 0%, #e6f7ff 100%)',
                 }}
                 draggable={false}
               />
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 16,
-                  left: 16,
-                  background: 'rgba(0,0,0,0.5)',
-                  color: 'white',
-                  borderRadius: 8,
-                  padding: '4px 12px',
-                  fontSize: 14,
-                  zIndex: 1002,
-                  pointerEvents: 'auto',
-                  userSelect: 'none',
-                }}
-              >
+              <div className="masterplan-modal-tip">
+                <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                  <circle cx="10" cy="10" r="10" fill="#fff" fillOpacity="0.18"/>
+                  <path d="M10 5v6m0 2h.01" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
                 <span>Scroll to zoom, drag to pan</span>
               </div>
               <button
+                className="masterplan-reset-btn"
                 onClick={() => {
                   setTranslate({ x: 0, y: 0 });
                   setScale(1);
                 }}
-                style={{
-                  position: 'absolute',
-                  top: 16,
-                  left: 16,
-                  background: 'rgba(0,0,0,0.7)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: 36,
-                  height: 36,
-                  fontSize: 18,
-                  cursor: 'pointer',
-                  zIndex: 1002,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginRight: 8,
-                  userSelect: 'none',
-                }}
                 aria-label="Reset pan and zoom"
                 type="button"
+                title="Reset pan and zoom"
               >
-                &#8634;
+                <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                  <path d="M10 4v4l3-3M10 16a6 6 0 1 1 6-6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </div>
             <button
+              className="masterplan-modal-close"
               onClick={() => setIsOpen(false)}
-              style={{
-                position: 'fixed',
-                top: 24,
-                right: 32,
-                background: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '50%',
-                width: 40,
-                height: 40,
-                fontSize: 24,
-                cursor: 'pointer',
-                zIndex: 1001,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
               aria-label="Close"
               type="button"
+              title="Close"
             >
               &times;
             </button>
           </div>
         )}
       </section>
+        <h2 className='bg_text text-[8vw] md:text:[12vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-full text-center'>explore</h2>
+    </section>
     </>
   )
 }

@@ -1,33 +1,62 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import React from 'react'
 
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [opacity, setOpacity] = useState(1);
+  const lastScrollY = useRef(0);
 
-  // Handle scroll effect
+  // Smooth scroll effect for background and show/hide
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          setScrolled(currentScrollY > 50);
+
+          if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+            setShowNavbar(false);
+            setOpacity(0);
+          } else {
+            setShowNavbar(true);
+            setOpacity(1);
+          }
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const menuItems = ['Home', 'About', 'Services', 'Portfolio', 'Location', 'Contact'];
-  
+
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav_bg py-3 ${
-        scrolled ? 'bg-[var(--lightmaincolor)] backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      }`}>
+      <nav
+        className={`
+          fixed top-0 left-0 right-0 z-50 nav_bg py-3
+          ${scrolled ? 'bg-[var(--lightmaincolor)] backdrop-blur-sm shadow-lg' : 'bg-transparent'}
+          ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}
+        `}
+        style={{
+          willChange: 'transform',
+          opacity: opacity,
+          transition: 'opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Flex: left menu, center logo, right menu button */}
           <div className="flex items-center h-16 justify-between md:justify-center relative">
@@ -39,8 +68,8 @@ const Navbar = () => {
                     key={index}
                     href={`#${item.toLowerCase()}`}
                     className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
-                      scrolled 
-                        ? 'text-[var(--white)]' 
+                      scrolled
+                        ? 'text-[var(--white)]'
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
@@ -52,11 +81,11 @@ const Navbar = () => {
             </div>
 
             {/* Logo - Center */}
-            <div className="flex-shrink-0 z-10">
+            <div className="flex-shrink-0 z-10 mt-5">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
-                <a href="/" className='inline-block w-fit'>
+                <a href="/" className="inline-block w-fit">
                   <div className="logo mx-0 md:mx-auto">
-                    <img src="/images/logo.png" className='w-full h-full' alt="SR Eco Park Logo" />
+                    <img src="/images/logo.png" className="w-full h-full" alt="SR Eco Park Logo" />
                   </div>
                 </a>
               </div>
@@ -70,8 +99,8 @@ const Navbar = () => {
                     key={index + Math.ceil(menuItems.length / 2)}
                     href={`#${item.toLowerCase()}`}
                     className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
-                      scrolled 
-                        ? 'text-[var(--white)]' 
+                      scrolled
+                        ? 'text-[var(--white)]'
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
@@ -90,22 +119,34 @@ const Navbar = () => {
                   scrolled ? 'text-gray-900' : 'text-white'
                 }`}
                 aria-label="Toggle menu"
+                style={{ outline: 'none', border: 'none', background: 'none', padding: 0 }}
               >
-                {/* Hamburger/Cross Lines */}
+                {/* Hamburger/Cross Lines - SMOOTH CROSS ANIMATION */}
                 <span
-                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ease-out ${
-                    isOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
-                  }`}
+                  className="absolute left-1/2 top-1/2 w-6 h-0.5 bg-current rounded transition-all duration-400 ease-in-out"
+                  style={{
+                    transform: isOpen
+                      ? 'translate(-50%, -50%) rotate(45deg)'
+                      : 'translate(-50%, -9px) rotate(0deg)',
+                    transition: 'transform 0.35s cubic-bezier(.4,0,.2,1), background 0.3s',
+                  }}
                 />
                 <span
-                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ease-out ${
-                    isOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className="absolute left-1/2 top-1/2 w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out"
+                  style={{
+                    opacity: isOpen ? 0 : 1,
+                    transform: 'translate(-50%, -10%)',
+                    transition: 'opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1)',
+                  }}
                 />
                 <span
-                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ease-out ${
-                    isOpen ? '-rotate-45 -translate-y-0' : 'translate-y-1.5'
-                  }`}
+                  className="absolute left-1/2 top-1/2 w-6 h-0.5 bg-current rounded transition-all duration-400 ease-in-out"
+                  style={{
+                    transform: isOpen
+                      ? 'translate(-50%, -50%) rotate(-45deg)'
+                      : 'translate(-50%, 9px) rotate(0deg)',
+                    transition: 'transform 0.35s cubic-bezier(.4,0,.2,1), background 0.3s',
+                  }}
                 />
               </button>
             </div>
@@ -113,24 +154,33 @@ const Navbar = () => {
         </div>
 
         {/* Mobile/Tablet Menu Overlay */}
-        <div className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${
-          isOpen ? 'visible' : 'invisible'
-        }`}>
-          <div 
-            className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-              isOpen ? 'opacity-50' : 'opacity-0'
+        <div
+          className={`md:hidden fixed inset-0 z-40 pointer-events-none`}
+          style={{
+            transition: 'background 0.3s cubic-bezier(.4,0,.2,1)',
+            height: '100vh', // Ensure overlay always covers full viewport height
+          }}
+        >
+          {/* Overlay background */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-500 ease-smooth bg-black ${
+              isOpen ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
             onClick={toggleMenu}
+            style={{
+              transition: 'opacity 0.5s cubic-bezier(.4,0,.2,1)',
+              height: '100vh', // Ensure background always covers full viewport height
+            }}
           />
-          {/* 
-            Fix: When menu is open, always show a solid/blurred background for the menu panel,
-            regardless of scroll state. We'll use bg-white/90 and backdrop-blur for a consistent look.
-          */}
-          <div className={`relative ${
-              isOpen ? 'bg-white/90 backdrop-blur-md' : 'bg-white'
-            } min-h-screen w-80 max-w-sm shadow-xl transform transition-transform duration-300 ease-out ${
-            isOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}>
+          {/* Slide-in menu panel */}
+          <div
+            className={`relative min-h-screen w-80 max-w-sm shadow-xl transform transition-transform duration-500 ease-smooth ${
+              isOpen ? 'translate-x-0 pointer-events-auto' : '-translate-x-full pointer-events-none'
+            } ${isOpen ? 'bg-white/90 backdrop-blur-md' : 'bg-white'}`}
+            style={{
+              transition: 'transform 0.5s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1)',
+            }}
+          >
             <div className="p-6">
               <div className="flex items-center justify-between mb-8">
                 <div className="text-2xl font-bold text-gray-900">Menu</div>
@@ -150,12 +200,12 @@ const Navbar = () => {
                     key={index}
                     href={`#${item.toLowerCase()}`}
                     onClick={toggleMenu}
-                    className={`block px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 transform hover:scale-105 hover:translate-x-2 ${
-                      isOpen ? 'animate-slideIn' : ''
-                    }`}
+                    className={`block px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 transform hover:scale-105 hover:translate-x-2 menu-link-animate`}
                     style={{
-                      animationDelay: `${index * 50}ms`,
-                      animationFillMode: 'both'
+                      animation: isOpen
+                        ? `slideInMenu 0.45s cubic-bezier(.4,0,.2,1) both`
+                        : 'none',
+                      animationDelay: isOpen ? `${index * 60 + 100}ms` : '0ms',
                     }}
                   >
                     {item}
@@ -167,7 +217,7 @@ const Navbar = () => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
 export default Navbar

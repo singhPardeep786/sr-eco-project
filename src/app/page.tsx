@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Banner from '@/components/banner/Banner'
 import Navbar from '@/components/navbar/Navbar'
@@ -8,6 +9,7 @@ import MasterPlan from '@/components/masterplan/MasterPlan'
 
 const Page = () => {
   return (
+    <ReactLenis root options={{ duration: 1 }}>
       <div>
         <Navbar />
         <Banner />
@@ -15,8 +17,7 @@ const Page = () => {
         <Features />
         <MasterPlan />
       </div>
-    // <ReactLenis root options={{ duration: 1 }}>
-    // </ReactLenis>
+    </ReactLenis>
   )
 }
 

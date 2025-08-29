@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 @font-face {
   font-family: 'light';
@@ -34,13 +35,14 @@ body {
 *::-webkit-scrollbar {
   width: 7px;
   background-color: var(--gray);
+  display: none;
 }
 
-*::-webkit-scrollbar-thumb {
+/* *::-webkit-scrollbar-thumb {
   width: 7px;
   background-color: var(--maincolor);
   border-radius: 50px;
-}
+} */
 
 :root {
   --lightmaincolor: #084c7a48;
@@ -77,8 +79,40 @@ body {
 
 .nav_bg {
   width: fit-content;
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   border-radius: 50px;
+  transition-property: background, box-shadow, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1), background 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+}
+.navbar-hidden {
+  transform: translateY(-110%);
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1), background 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+@media (max-width: 767px) {
+  .navbar-visible, .navbar-hidden {
+    transition: transform 0.7s cubic-bezier(.4,0,.2,1), background 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+  }
+}
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateX(-32px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.menu-link-animate {
+  will-change: transform, opacity;
 }
 
 .logo {
@@ -424,7 +458,7 @@ body {
 }
 
 .features_box {
-  width: 25%;
+  /* width: 30%; */
   height: 250px;
   background: linear-gradient(315deg, var(--maincolor), var(--blue)) ;
   display: flex;
@@ -432,6 +466,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  text-align: center;
   border-radius: 20px;
 }
 
@@ -446,6 +481,82 @@ body {
 }
 
 /*=============FEATURES===SECTION===END==========*/
+
+/*=============MASTERPLAN===SECTION===START==========*/
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes zoomInImage {
+  from { transform: scale(0.96); opacity: 0.7; }
+  to { transform: scale(1); opacity: 1; }
+}
+.masterplan-section {
+  /* background: linear-gradient(120deg, #f8fafc 0%, #e6f0fa 100%); */
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(30,144,255,0.07);
+  padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+  margin: 2.5rem auto 2.5rem auto;
+  max-width: 900px;
+  position: relative;
+}
+.masterplan-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(30,144,255,0.08);
+}
+.masterplan-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--maincolor) 100%);
+  border-radius: 2px;
+  margin: 0.5rem auto 2rem auto;
+}
+.masterplan-glass {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: box-shadow 0.2s, transform 0.18s;
+  overflow: hidden;
+  position: relative;
+}
+.masterplan-glass:hover {
+  box-shadow: 0 12px 48px 0 rgba(30,144,255,0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+.masterplan-img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  filter: brightness(0.98) saturate(1.08);
+  transition: filter 0.18s, transform 0.18s;
+}
+.masterplan-img:hover {
+  filter: brightness(1) saturate(1.12);
+}
+
+.bg_text {
+  -webkit-text-stroke: 1px var(--black);
+  text-stroke: 1px var(--black);
+  color: transparent;
+  font-weight: 300;
+  letter-spacing: 2rem;
+  z-index: 9;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  user-select: none;
+}
+
+/*=============MASTERPLAN===SECTION===END==========*/
 
 /*=============RESPONSIVE===CODES===SECTION===START==========*/
 
@@ -492,10 +603,6 @@ body {
     height: 120px;
   }
 
-  .intro_content {
-    /* padding: .7rem; */
-  }
-  
   .intro_content h2 {
     font-size: 1.35rem;
     line-height: 1.5rem;
