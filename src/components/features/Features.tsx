@@ -186,9 +186,9 @@ function useResponsiveChunkSize() {
     function handleResize() {
       if (typeof window === "undefined") return;
       const width = window.innerWidth;
-      if (width < 786) {
+      if (width < 700) {
         setChunkSize(1);
-      } else if (width >= 786 && width < 1024) {
+      } else if (width >= 700 && width < 1024) {
         setChunkSize(3);
       } else {
         setChunkSize(4);
