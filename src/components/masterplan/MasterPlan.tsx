@@ -136,7 +136,7 @@ const MasterPlan = () => {
     <>
     <section className='wrapper relative'>
       <section className="masterplan-section">
-        <h2 className="masterplan-title">Master Plan</h2>
+        <h2 className="masterplan-title uppercase">Master Plan</h2>
         <div className="masterplan-divider" />
         <div className="w-full flex flex-col items-center">
           <a
@@ -146,7 +146,6 @@ const MasterPlan = () => {
             className="w-full"
             style={{
               width: '100%',
-              maxWidth: 700,
               margin: '0 auto',
               marginBottom: 12,
               marginTop: 8,
@@ -245,7 +244,7 @@ const MasterPlan = () => {
           </div>
         )}
       </section>
-        <h2 className='bg_text text-[8vw] md:text:[12vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-full text-center'>explore</h2>
+        {/* <h2 className='bg_text text-[8vw] md:text:[12vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-full text-center'>explore</h2> */}
     </section>
     </>
   )
