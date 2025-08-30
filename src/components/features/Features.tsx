@@ -1,7 +1,7 @@
 "use client"
 import { Icon } from '@iconify/react/dist/iconify.js'
-import gsap from 'gsap';
 import React, { ReactNode, useEffect, useMemo } from 'react'
+import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -240,7 +240,7 @@ const Features: React.FC = () => {
   return (
     <>
       <section className='wrapper my-8'>
-        <h2 className='text-center uppercase section_heading mt-5 transition-all duration-500 text-[var(--black)]'>features</h2>
+        <h2 className='text-center section_heading mt-5'>features</h2>
         <div className="masterplan-divider" />
         <div className="flex flex-col gap-10 items-start w-full mt-8">
           {/* Clubhouse Features */}

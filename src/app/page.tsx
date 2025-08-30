@@ -6,18 +6,22 @@ import { ReactLenis } from 'lenis/react'
 import Introduction from '@/components/introduction/Introduction'
 import Features from '@/components/features/Features'
 import MasterPlan from '@/components/masterplan/MasterPlan'
+import ClubhouseAmenities from '@/components/amenities/ClubhouseAmenities'
+import ParkAmenities from '@/components/amenities/ParkAmenities'
 
 const Page = () => {
   return (
-    <ReactLenis root options={{ duration: 1 }}>
+    // <ReactLenis root options={{ duration: 1 }}>
       <div>
         <Navbar />
         <Banner />
         <Introduction />
         <Features />
         <MasterPlan />
+        <ClubhouseAmenities />
+        <ParkAmenities />
       </div>
-    </ReactLenis>
+    // </ReactLenis>
   )
 }
 
