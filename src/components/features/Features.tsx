@@ -180,7 +180,7 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 
 // Custom hook to get responsive chunk size
 function useResponsiveChunkSize() {
-  const [chunkSize, setChunkSize] = React.useState(4);
+  const [chunkSize, setChunkSize] = React.useState(5);
 
   React.useEffect(() => {
     function handleResize() {
@@ -189,9 +189,9 @@ function useResponsiveChunkSize() {
       if (width < 700) {
         setChunkSize(1);
       } else if (width >= 700 && width < 1024) {
-        setChunkSize(3);
-      } else {
         setChunkSize(4);
+      } else {
+        setChunkSize(5);
       }
     }
     handleResize();

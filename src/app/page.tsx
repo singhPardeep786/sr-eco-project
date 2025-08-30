@@ -8,6 +8,7 @@ import Features from '@/components/features/Features'
 import MasterPlan from '@/components/masterplan/MasterPlan'
 import ClubhouseAmenities from '@/components/amenities/ClubhouseAmenities'
 import ParkAmenities from '@/components/amenities/ParkAmenities'
+import Location from '@/components/locationAndProximities/Location'
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
         <MasterPlan />
         <ClubhouseAmenities />
         <ParkAmenities />
+        <Location />
       </div>
     // </ReactLenis>
   )
