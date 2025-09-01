@@ -44,7 +44,7 @@ const Proximities = () => {
     <>
         <div>
             <h2 className='section_heading text-center mt-8'>proximities</h2>
-            <div className="masterplan-divider" />
+            <div className="heading-divider" />
             <div className="proximities_main">
                 {proximity.map((content, idx)=>
                     <div className="proximities rounded-5 relative" key={idx}>

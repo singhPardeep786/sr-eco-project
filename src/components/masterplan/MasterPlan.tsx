@@ -137,7 +137,7 @@ const MasterPlan = () => {
     <section className='wrapper relative'>
       <section className="masterplan-section">
         <h2 className="masterplan-title uppercase">Master Plan</h2>
-        <div className="masterplan-divider" />
+        <div className="heading-divider" />
         <div className="w-full flex flex-col items-center">
           <a
             href="/images/master_plan/master_plan.jpg"

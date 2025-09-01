@@ -9,6 +9,7 @@ import MasterPlan from '@/components/masterplan/MasterPlan'
 import ClubhouseAmenities from '@/components/amenities/ClubhouseAmenities'
 import ParkAmenities from '@/components/amenities/ParkAmenities'
 import Location from '@/components/locationAndProximities/Location'
+import About from '@/components/about/About'
 
 const Page = () => {
   return (
@@ -22,6 +23,7 @@ const Page = () => {
         <ClubhouseAmenities />
         <ParkAmenities />
         <Location />
+        <About />
       </div>
     // </ReactLenis>
   )

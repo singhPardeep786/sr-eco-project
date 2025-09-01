@@ -7,9 +7,16 @@ const Location = () => {
   const [isOpen, setIsOpen] = useState(false);
   const panzoomRef = useRef<HTMLDivElement>(null);
 
-  // Bind Fancybox only for location_map
+  // Bind Fancybox only for location_map and handle close event to hide second image
   useEffect(() => {
-    Fancybox.bind("[data-fancybox='location_map']");
+    // Bind Fancybox and listen for close event
+    Fancybox.bind("[data-fancybox='location_map']", {
+      on: {
+        close: () => {
+          setIsOpen(false);
+        }
+      }
+    });
     return () => {
       Fancybox.destroy();
     }
@@ -143,10 +150,10 @@ const Location = () => {
     <>
       <section className='wrapper'>
         <h2 className='section_heading text-center mt-8'>Location</h2>
-        <div className="masterplan-divider" />
+        <div className="heading-divider" />
         <div className="w-full md:flex items-center justify-center">
             <div className="w-full md:w-1/2">
-                <div className="w-full flex flex-col items-center">
+                <div className="w-full flex flex-col items-center bg-zinc-100 p-3 md:p-5 rounded-xl">
                     <a
                     href="/images/location_and_proximity/location.jpg"
                     data-fancybox="location_map"
@@ -159,10 +166,7 @@ const Location = () => {
                         marginTop: 8,
                         cursor: 'zoom-in',
                     }}
-                    onClick={e => {
-                        e.preventDefault();
-                        setIsOpen(true);
-                    }}
+                    // Remove onClick to allow Fancybox to work natively
                     >
                     <img
                         src="/images/location_and_proximity/location.jpg"
@@ -171,6 +175,7 @@ const Location = () => {
                     />
                     </a>
                 </div>
+                {/* Show custom modal only if isOpen is true (i.e., user clicked for custom zoom/pan, not Fancybox) */}
                 {isOpen && (
                     <div
                     className="masterplan-modal-bg"

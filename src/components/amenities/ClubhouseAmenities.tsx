@@ -66,7 +66,7 @@ const ClubhouseAmenities = () => {
     <>
         <section className='wrapper'>
             <h2 className='section_heading text-center'>amenities</h2>
-            <div className="masterplan-divider" />
+            <div className="heading-divider" />
             <h3 className='capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500'>clubhouse amenities</h3>
             <div className="animated_line mb-5"></div>
               <div className="carousel text-white">
