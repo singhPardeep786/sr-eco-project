@@ -10,6 +10,7 @@ import ClubhouseAmenities from '@/components/amenities/ClubhouseAmenities'
 import ParkAmenities from '@/components/amenities/ParkAmenities'
 import Location from '@/components/locationAndProximities/Location'
 import About from '@/components/about/About'
+import Footer from '@/components/footer/Footer'
 
 const Page = () => {
   return (
@@ -24,6 +25,7 @@ const Page = () => {
         <ParkAmenities />
         <Location />
         <About />
+        <Footer />
       </div>
     // </ReactLenis>
   )

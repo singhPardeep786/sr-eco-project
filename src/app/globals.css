@@ -675,53 +675,15 @@ body {
   align-items: center;
   overflow-x: auto;
   position: relative;
-  scroll-behavior: smooth;
   transition: all ease 0.5s;
-  anchor-name: --carousel;
-  scroll-snap-type: x mandatory;
-  scroll-marker-group: after;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
 }
 
-.carousel::scroll-button(right),
-.carousel::scroll-button(left){
-  content: '→';
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  color: var(--white);
-  background-color: var(--blue);
-  border: none;
-  font-family: 'medium';
-  border-radius: 50%;
-  position: fixed;
-  right: 1rem;
-  top: 50%;
-  position-anchor: --carousel;
-  position-area: right center;
-  translate: -50%;
-  z-index: 999;
-  padding-bottom: 0.2rem;
-  cursor: pointer;
-}
-
-.carousel::scroll-button(left){
-  content: '←';
-  position-area: left center;
-  translate: 70%;
-}
-
-.carousel::scroll-button(right):disabled,
-.carousel::scroll-button(left):disabled {
-  opacity: 0.5;
-  cursor: auto;
-}
-
 .card {
-  flex: 0 0 90%;
+  flex: 0 0 80%;
   height: 80vh;
   background-color: var(--black);
   border-radius: .5rem;
@@ -731,29 +693,6 @@ body {
   aspect-ratio: 5 / 3;
   transition: flex 0.3s, height 0.3s;
   overflow: hidden;
-}
-
-.carousel::scroll-marker-group {
-  display: flex;
-  align-items: center;
-  justify-content: center ;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.card::scroll-marker {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: var(--lightbg);
-  border-radius: 50%;
-  transition: all ease 0.5s;
-}
-
-.card::scroll-marker:target-current {
-  width: 2rem;
-  border-radius: 10px;
-  background-color: var(--blue);
 }
 
 .card_content {
@@ -772,137 +711,6 @@ body {
   transition: all ease 0.5s;
 }
 
-.carousel2 {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  overflow-x: auto;
-  position: relative;
-  scroll-behavior: smooth;
-  transition: all ease 0.5s;
-  anchor-name: --carousel2;
-  scroll-snap-type: x mandatory;
-  scroll-marker-group: after;
-}
-
-.carousel2::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel2::scroll-button(right),
-.carousel2::scroll-button(left){
-  content: '→';
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  color: var(--white);
-  background-color: var(--blue);
-  border: none;
-  font-family: 'medium';
-  border-radius: 50%;
-  position: fixed;
-  right: 1rem;
-  top: 50%;
-  position-anchor: --carousel2;
-  position-area: right center;
-  translate: -50%;
-  z-index: 999;
-  padding-bottom: 0.2rem;
-  cursor: pointer;
-}
-
-.carousel2::scroll-button(left){
-  content: '←';
-  position-area: left center;
-  translate: 70%;
-}
-
-.carousel2::scroll-button(right):disabled,
-.carousel2::scroll-button(left):disabled {
-  opacity: 0.5;
-  cursor: auto;
-}
-
-.card2 {
-  flex: 0 0 90%;
-  height: 85vh;
-  background-color: var(--black);
-  border-radius: .5rem;
-  text-align: center;
-  align-content: center;
-  scroll-snap-align: start;
-  aspect-ratio: 5 / 3;
-  transition: flex 0.3s, height 0.3s;
-  overflow: hidden;
-}
-
-.carousel2::scroll-marker-group {
-  display: flex;
-  align-items: center;
-  justify-content: center ;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.card2::scroll-marker {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: var(--lightbg);
-  border-radius: 50%;
-  transition: all ease 0.5s;
-}
-
-.card2::scroll-marker:target-current {
-  width: 2rem;
-  border-radius: 10px;
-  background-color: var(--blue);
-}
-
-@media (max-width: 900px) {
-  .card1 {
-    flex: 0 0 90%;
-    height: 40vh;
-    aspect-ratio: 4 / 3;
-  }
-  .card2 {
-    flex: 0 0 90%;
-    height: 40vh;
-    aspect-ratio: 4 / 3;
-  }
-}
-
-@media (max-width: 700px) {
-  .card1 {
-    flex: 0 0 95%;
-    height: 35vh;
-    aspect-ratio: 3 / 2;
-  }
-  .card2 {
-    flex: 0 0 95%;
-    height: 35vh;
-    aspect-ratio: 3 / 2;
-  }
-}
-
-@media (max-width: 500px) {
-  .card1 {
-    flex: 0 0 98%;
-    height: 28vh;
-    border-radius: 0.4rem;
-    aspect-ratio: 4 / 3;
-  }
-  .card2 {
-    flex: 0 0 98%;
-    height: 28vh;
-    border-radius: 0.4rem;
-    aspect-ratio: 4 / 3;
-  }
-}
-
 /*=============CLUBHOUSE===AMENITIES===SECTION===END==========*/
 
 
@@ -910,7 +718,6 @@ body {
 
 .location_content {
   width: 70%;
-  /* background-color: var(--blue); */
   padding: 2rem;
   margin: 0 auto;
   border-radius: 20px;
@@ -1050,6 +857,95 @@ body {
 }
 
 /*=============ABOUT===SECTION===END==========*/
+
+
+/*=============FOOTER===SECTION===START==========*/
+
+.footer_part h3 {
+  font-size: 1.5rem;
+  color: var(--bodybg);
+  transition: all ease 0.5s;
+}
+
+.footer_part p {
+  font-family: 'light';
+  transition: all ease 0.5s;
+}
+
+.email {
+  text-decoration: none;
+  color: var(--white);
+  display: inline-block;
+  position: relative;
+  font-family: 'light';
+}
+
+.email::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--bodybg);
+  bottom: 0;
+  left: 0;
+  transition: all ease 0.5s;
+}
+
+.email:hover::after {
+  width: 30%;
+}
+
+.footer_icon {
+  color: var(--white);
+  /* background-color: var(--maincolor); */
+  border: 1px solid var(--maincolor);
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: all ease 0.5s;
+}
+
+.footer_icon:hover {
+  border: 1px solid var(--blue);
+}
+
+.footer_icon::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 500%;
+  background-color: var(--blue);
+  bottom: -500%;
+  left: -50%;
+  transition: all ease 0.5s;
+  z-index: -1;
+}
+
+.footer_icon:hover::after {
+  bottom: -380%;
+}
+
+.footer_part iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  filter: grayscale(1);
+  transition: all ease 0.5s;
+}
+
+.footer_part iframe:hover {
+  filter: grayscale(0);
+}
+
+.copyright {
+  border-top: 1px solid var(--maincolor);
+  font-family: 'light';
+}
+
+/*=============FOOTER===SECTION===END==========*/
 
 
 /*=============RESPONSIVE===CODES===SECTION===START==========*/
@@ -1460,6 +1356,18 @@ body {
     width: 40%;
   }
   
+  .footer_part h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer_part p {
+    font-size: 0.8rem;
+  }
+
+  .footer_part iframe {
+    height: 30vw;
+  }
+  
 }
 
 
@@ -1551,6 +1459,18 @@ body {
 
   .project_logo {
     width: 40%;
+  }
+  
+  .footer_part h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer_part p {
+    font-size: 0.9rem;
+  }
+
+  .footer_part iframe {
+    height: 30vw;
   }
   
 }
@@ -1648,6 +1568,18 @@ body {
 
   .project_logo {
     width: 40%;
+  }
+
+  .footer_part h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer_part p {
+    font-size: 0.9rem;
+  }
+
+  .footer_part iframe {
+    height: 30vw;
   }
   
 }
@@ -1908,6 +1840,18 @@ body {
   .about {
     width: 80%;
   }
+
+  .ongoing_project p {
+    font-size: 0.8rem;
+  }
+  
+  .project_img {
+    height: 250px;
+  }
+
+  .project_logo {
+    width: 40%;
+  }
   
 }
 
@@ -1968,6 +1912,18 @@ body {
     width: 80%;
   }
   
+  .ongoing_project p {
+    font-size: 0.8rem;
+  }
+  
+  .project_img {
+    height: 250px;
+  }
+
+  .project_logo {
+    width: 40%;
+  }
+  
 }
 
 @media (min-width:1301px) and (max-width: 1450px) {
@@ -1978,6 +1934,10 @@ body {
 
   .about {
     width: 80%;
+  }
+  
+  .project_img {
+    height: 300px;
   }
   
 }
