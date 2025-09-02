@@ -94,7 +94,7 @@ const About = () => {
             <div className="heading-divider" />
             <div className='w-full md:flex items-center justify-center'>
                 <div className='w-full md:w-1/2'>
-                    <div className="about mx-auto md:mx-0">
+                    <div className="about mx-auto">
                         <div className="about_logo">
                             <img src="/images/logo1.png" className='w-full h-full' alt="sr eco park about logo" />
                         </div>

@@ -58,7 +58,7 @@ const Navbar = () => {
       <div id='home'></div>
       <nav
         className={`
-          fixed top-0 left-0 right-0 z-50 nav_bg py-3
+          sticky top-0 left-0 right-0 nav_bg py-3 z-[999]
           ${scrolled ? 'bg-[var(--lightmaincolor)] backdrop-blur-sm shadow-lg' : 'bg-transparent'}
           ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}
         `}
@@ -70,7 +70,7 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Flex: left menu, center logo, right menu button */}
-          <div className="flex items-center h-16 justify-between md:justify-center relative">
+          <div className="flex items-center h-16 justify-center md:justify-center relative">
             {/* Desktop Menu - Left */}
             <div className="hidden md:flex flex-1 justify-end">
               <div className="flex items-baseline space-x-8">
@@ -95,7 +95,7 @@ const Navbar = () => {
             {/* Logo - Center */}
             <div className="flex-shrink-0 z-10 mt-5">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
-                <a href="#home" className="inline-block w-fit">
+                <a href="#home" className="inline-block">
                   <div className="logo mx-0 md:mx-auto">
                     <img src="/images/logo.png" className="w-full h-full" alt="SR Eco Park Logo" />
                   </div>

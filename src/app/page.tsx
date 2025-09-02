@@ -19,8 +19,7 @@ const Page = () => {
     
     {/* <ReactLenis root options={{ duration: 1 }}> */}
 
-      <PageLoader />
-    
+      <PageLoader>
       <div>
         <Navbar />
         <Banner />
@@ -33,6 +32,8 @@ const Page = () => {
         <About />
         <Footer />
       </div>
+      </PageLoader>
+    
     {/* </ReactLenis> */}
     </>
   )
