@@ -11,10 +11,16 @@ import ParkAmenities from '@/components/amenities/ParkAmenities'
 import Location from '@/components/locationAndProximities/Location'
 import About from '@/components/about/About'
 import Footer from '@/components/footer/Footer'
+import PageLoader from '@/components/Pageloader/PageLoader'
 
 const Page = () => {
   return (
-    // <ReactLenis root options={{ duration: 1 }}>
+    <>
+    
+    {/* <ReactLenis root options={{ duration: 1 }}> */}
+
+      <PageLoader />
+    
       <div>
         <Navbar />
         <Banner />
@@ -27,7 +33,8 @@ const Page = () => {
         <About />
         <Footer />
       </div>
-    // </ReactLenis>
+    {/* </ReactLenis> */}
+    </>
   )
 }
 

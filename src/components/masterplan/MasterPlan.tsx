@@ -134,118 +134,119 @@ const MasterPlan = () => {
 
   return (
     <>
-    <section className='wrapper relative'>
-      <section className="masterplan-section">
-        <h2 className="masterplan-title uppercase">Master Plan</h2>
-        <div className="heading-divider" />
-        <div className="w-full flex flex-col items-center">
-          <a
-            href="/images/master_plan/master_plan.jpg"
-            data-fancybox="masterplan"
-            data-caption="SR Eco Park Master Plan"
-            className="w-full"
-            style={{
-              width: '100%',
-              margin: '0 auto',
-              marginBottom: 12,
-              marginTop: 8,
-              cursor: 'zoom-in',
-            }}
-          >
-            <img
-              src="/images/master_plan/master_plan.jpg"
-              className="masterplan-img"
-              alt="SR Eco Park Master Plan"
-            />
-          </a>
-        </div>
-        {isOpen && (
-          <div
-            className="masterplan-modal-bg"
-            style={modalAnimation}
-            onClick={() => setIsOpen(false)}
-          >
-            <div
-              ref={panzoomRef}
-              className="masterplan-modal-img"
+      <div id='plan'></div>
+      <section className='wrapper relative'>
+        <section className="masterplan-section">
+          <h2 className="masterplan-title uppercase">Master Plan</h2>
+          <div className="heading-divider" />
+          <div className="w-full flex flex-col items-center">
+            <a
+              href="/images/master_plan/master_plan.jpg"
+              data-fancybox="masterplan"
+              data-caption="SR Eco Park Master Plan"
+              className="w-full"
               style={{
-                cursor: isPanning ? 'grabbing' : 'grab',
-                ...imageAnimation,
+                width: '100%',
+                margin: '0 auto',
+                marginBottom: 12,
+                marginTop: 8,
+                cursor: 'zoom-in',
               }}
-              onMouseDown={e => {
-                e.stopPropagation();
-                setIsPanning(true);
-                setOrigin({ x: e.clientX, y: e.clientY });
-              }}
-              onMouseUp={e => {
-                setIsPanning(false);
-              }}
-              onMouseLeave={e => {
-                setIsPanning(false);
-              }}
-              onMouseMove={e => {
-                if (!isPanning) return;
-                setTranslate(prev => ({
-                  x: prev.x + e.movementX,
-                  y: prev.y + e.movementY,
-                }));
-              }}
-              onClick={e => e.stopPropagation()}
             >
               <img
-                ref={imgRef}
                 src="/images/master_plan/master_plan.jpg"
-                alt="SR Eco Park Master Plan Enlarged"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
-                  transition: isPanning ? 'none' : 'transform 0.25s cubic-bezier(.4,0,.2,1)',
-                  borderRadius: '20px',
-                  userSelect: 'none',
-                  pointerEvents: 'none',
-                  touchAction: 'none',
-                  background: 'linear-gradient(120deg, #f0f8ff 0%, #e6f7ff 100%)',
-                }}
-                draggable={false}
+                className="masterplan-img"
+                alt="SR Eco Park Master Plan"
               />
-              <div className="masterplan-modal-tip">
-                <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                  <circle cx="10" cy="10" r="10" fill="#fff" fillOpacity="0.18"/>
-                  <path d="M10 5v6m0 2h.01" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-                <span>Scroll to zoom, drag to pan</span>
+            </a>
+          </div>
+          {isOpen && (
+            <div
+              className="masterplan-modal-bg"
+              style={modalAnimation}
+              onClick={() => setIsOpen(false)}
+            >
+              <div
+                ref={panzoomRef}
+                className="masterplan-modal-img"
+                style={{
+                  cursor: isPanning ? 'grabbing' : 'grab',
+                  ...imageAnimation,
+                }}
+                onMouseDown={e => {
+                  e.stopPropagation();
+                  setIsPanning(true);
+                  setOrigin({ x: e.clientX, y: e.clientY });
+                }}
+                onMouseUp={e => {
+                  setIsPanning(false);
+                }}
+                onMouseLeave={e => {
+                  setIsPanning(false);
+                }}
+                onMouseMove={e => {
+                  if (!isPanning) return;
+                  setTranslate(prev => ({
+                    x: prev.x + e.movementX,
+                    y: prev.y + e.movementY,
+                  }));
+                }}
+                onClick={e => e.stopPropagation()}
+              >
+                <img
+                  ref={imgRef}
+                  src="/images/master_plan/master_plan.jpg"
+                  alt="SR Eco Park Master Plan Enlarged"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
+                    transition: isPanning ? 'none' : 'transform 0.25s cubic-bezier(.4,0,.2,1)',
+                    borderRadius: '20px',
+                    userSelect: 'none',
+                    pointerEvents: 'none',
+                    touchAction: 'none',
+                    background: 'linear-gradient(120deg, #f0f8ff 0%, #e6f7ff 100%)',
+                  }}
+                  draggable={false}
+                />
+                <div className="masterplan-modal-tip">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="10" fill="#fff" fillOpacity="0.18"/>
+                    <path d="M10 5v6m0 2h.01" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  <span>Scroll to zoom, drag to pan</span>
+                </div>
+                <button
+                  className="masterplan-reset-btn"
+                  onClick={() => {
+                    setTranslate({ x: 0, y: 0 });
+                    setScale(1);
+                  }}
+                  aria-label="Reset pan and zoom"
+                  type="button"
+                  title="Reset pan and zoom"
+                >
+                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                    <path d="M10 4v4l3-3M10 16a6 6 0 1 1 6-6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
               <button
-                className="masterplan-reset-btn"
-                onClick={() => {
-                  setTranslate({ x: 0, y: 0 });
-                  setScale(1);
-                }}
-                aria-label="Reset pan and zoom"
+                className="masterplan-modal-close"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close"
                 type="button"
-                title="Reset pan and zoom"
+                title="Close"
               >
-                <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                  <path d="M10 4v4l3-3M10 16a6 6 0 1 1 6-6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                &times;
               </button>
             </div>
-            <button
-              className="masterplan-modal-close"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close"
-              type="button"
-              title="Close"
-            >
-              &times;
-            </button>
-          </div>
-        )}
+          )}
+        </section>
+          {/* <h2 className='bg_text text-[8vw] md:text:[12vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-full text-center'>explore</h2> */}
       </section>
-        {/* <h2 className='bg_text text-[8vw] md:text:[12vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase w-full text-center'>explore</h2> */}
-    </section>
     </>
   )
 }

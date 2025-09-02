@@ -239,6 +239,7 @@ const Features: React.FC = () => {
   
   return (
     <>
+      <div id='features'></div>
       <section className='wrapper my-8'>
         <h2 className='text-center section_heading mt-5'>features</h2>
         <div className="heading-divider" />

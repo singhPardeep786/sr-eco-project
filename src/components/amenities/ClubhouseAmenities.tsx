@@ -73,6 +73,7 @@ const ClubhouseAmenities = () => {
 
   return (
     <>
+      <div id='amenities'></div>
       <section className="wrapper">
         <h2 className="section_heading text-center">amenities</h2>
         <div className="heading-divider" />

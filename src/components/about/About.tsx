@@ -88,6 +88,7 @@ const About = () => {
     
   return (
     <>
+        <div id='about'></div>
         <section className='wrapper'>
             <h2 className='section_heading text-center mt-8'>about us</h2>
             <div className="heading-divider" />

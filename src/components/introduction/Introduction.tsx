@@ -169,7 +169,7 @@ const Introduction = () => {
 
   return (
     <>
-      {/* <div id='intro'></div> */}
+      <div id='intro'></div>
       <div className='w-full h-screen bg-zinc-800 intro_bg overflow-hidden relative'>
         <section className="wrapper h-full">
           <div className='w-full h-full flex items-center justify-end relative'>

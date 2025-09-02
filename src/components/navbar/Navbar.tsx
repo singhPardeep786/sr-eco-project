@@ -10,6 +10,18 @@ const Navbar = () => {
   const [opacity, setOpacity] = useState(1);
   const lastScrollY = useRef(0);
 
+  // Define menu items with unique hrefs (ids removed)
+  const menuItems = [
+    { label: 'Home', href: 'https://srprojects.in/', target: "_blank" },
+    { label: 'Intro', href: '#intro' },
+    { label: 'Features', href: '#features' },
+    { label: 'Master Plan', href: '#plan' },
+    { label: 'Amenities', href: '#amenities' },
+    { label: 'Location', href: '#location' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
   // Smooth scroll effect for background and show/hide
   useEffect(() => {
     let ticking = false;
@@ -41,10 +53,9 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const menuItems = ['Home', 'Intro', 'Features', 'master plan', 'Amenities', 'Location', 'About', 'Contact'];
-
   return (
     <>
+      <div id='home'></div>
       <nav
         className={`
           fixed top-0 left-0 right-0 z-50 nav_bg py-3
@@ -65,15 +76,16 @@ const Navbar = () => {
               <div className="flex items-baseline space-x-8">
                 {menuItems.slice(0, Math.ceil(menuItems.length / 2)).map((item, index) => (
                   <a
-                    key={index}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.href}
+                    href={item.href}
+                    target={item.target}
                     className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
-                    {item}
+                    {item.label}
                     <span className="absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--maincolor)] transition-all duration-300 group-hover:w-[80%]"></span>
                   </a>
                 ))}
@@ -83,7 +95,7 @@ const Navbar = () => {
             {/* Logo - Center */}
             <div className="flex-shrink-0 z-10 mt-5">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
-                <a href="/" className="inline-block w-fit">
+                <a href="#home" className="inline-block w-fit">
                   <div className="logo mx-0 md:mx-auto">
                     <img src="/images/logo.png" className="w-full h-full" alt="SR Eco Park Logo" />
                   </div>
@@ -96,15 +108,15 @@ const Navbar = () => {
               <div className="flex items-baseline space-x-8">
                 {menuItems.slice(Math.ceil(menuItems.length / 2)).map((item, index) => (
                   <a
-                    key={index + Math.ceil(menuItems.length / 2)}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.href}
+                    href={item.href}
                     className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
                         : 'text-white lg:text-gray-700'
                     }`}
                   >
-                    {item}
+                    {item.label}
                     <span className="absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--maincolor)] transition-all duration-300 group-hover:w-[80%]"></span>
                   </a>
                 ))}
@@ -197,9 +209,10 @@ const Navbar = () => {
               <nav className="space-y-4">
                 {menuItems.map((item, index) => (
                   <a
-                    key={index}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.href}
+                    href={item.href}
                     onClick={toggleMenu}
+                    target={item.target}
                     className={`block px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300 transform hover:scale-105 hover:translate-x-2 menu-link-animate`}
                     style={{
                       animation: isOpen
@@ -208,7 +221,7 @@ const Navbar = () => {
                       animationDelay: isOpen ? `${index * 60 + 100}ms` : '0ms',
                     }}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </nav>

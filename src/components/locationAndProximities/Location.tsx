@@ -148,6 +148,7 @@ const Location = () => {
 
   return (
     <>
+      <div id='location'></div>
       <section className='wrapper'>
         <h2 className='section_heading text-center mt-8'>Location</h2>
         <div className="heading-divider" />
