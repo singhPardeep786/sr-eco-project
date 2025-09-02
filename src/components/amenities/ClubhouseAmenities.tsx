@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper/modules';
+import { Pagination, A11y, Autoplay, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -85,10 +85,11 @@ const ClubhouseAmenities = () => {
           className="relative"
         >
           <Swiper
-            modules={[Pagination, A11y, Autoplay]}
+            modules={[Pagination, A11y, Autoplay, Keyboard]}
             pagination={{ clickable: true }}
             spaceBetween={24}
             slidesPerView={1}
+            keyboard={true}
             speed={1200}
             loop={true}
             className="carousel text-white"
