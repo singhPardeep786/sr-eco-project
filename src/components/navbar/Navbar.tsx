@@ -41,7 +41,7 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const menuItems = ['Home', 'About', 'Services', 'Portfolio', 'Location', 'Contact'];
+  const menuItems = ['Home', 'Intro', 'Features', 'master plan', 'Amenities', 'Location', 'About', 'Contact'];
 
   return (
     <>
