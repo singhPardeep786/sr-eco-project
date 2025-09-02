@@ -14,7 +14,6 @@ const PageLoader: React.FC<PageLoaderProps> = ({ children }) => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-
    
     tl.set(pageLoader.current, { display: "block" })
       .to(".stair", {

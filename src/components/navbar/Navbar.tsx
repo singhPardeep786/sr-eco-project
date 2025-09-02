@@ -59,7 +59,7 @@ const Navbar = () => {
       <nav
         className={`
           sticky top-0 left-0 right-0 nav_bg py-3 z-[999]
-          ${scrolled ? 'bg-[var(--lightmaincolor)] backdrop-blur-sm shadow-lg' : 'bg-transparent'}
+          ${scrolled ? 'bg-[var(--maincolor)] backdrop-blur-sm shadow-lg' : 'bg-[var(--lightmaincolor2)]'}
           ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}
         `}
         style={{

@@ -25,7 +25,7 @@ const Banner = () => {
 
   return (
     <>
-    <div className="slides_main mt-[-7rem] relative">
+    <div className="slides_main mt-[-6.5rem] relative">
       <Swiper
         pagination={{ clickable: true }}
         modules={[Autoplay, EffectFade, Keyboard, Pagination]}
