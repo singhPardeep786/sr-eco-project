@@ -75,6 +75,41 @@ body {
   font-family: 'bold';
 }
 
+/*=============FIXED===ICONS===START==========*/
+
+.fixed_icons {
+  width: fit-content;
+}
+
+.first_icon {
+  width: fit-content;
+  transform: translateX(101%);
+}
+
+.first_icon:hover {
+  transform: translateX(30%);
+}
+
+.second_icon {
+  width: fit-content;
+  transform: translateX(78%);
+}
+
+.second_icon:hover {
+  transform: translateX(0);
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.97);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+/*=============FIXED===ICONS===END==========*/
+
 /*=============NAVBAR===START==========*/
 
 .nav_bg {
@@ -938,7 +973,7 @@ body {
 }
 
 .footer_icon:hover {
-  border: 1px solid var(--blue);
+  border: 1px solid var(--lightmaincolor2);
 }
 
 .footer_icon::after {
@@ -946,7 +981,7 @@ body {
   position: absolute;
   width: 200%;
   height: 500%;
-  background-color: var(--blue);
+  background-color: var(--lightmaincolor2);
   bottom: -500%;
   left: -50%;
   transition: all ease 0.5s;

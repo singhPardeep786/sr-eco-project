@@ -12,6 +12,7 @@ import Location from '@/components/locationAndProximities/Location'
 import About from '@/components/about/About'
 import Footer from '@/components/footer/Footer'
 import PageLoader from '@/components/Pageloader/PageLoader'
+import FixedIcons from '@/components/fixedicons/FixedIcons'
 
 const Page = () => {
   return (
@@ -19,6 +20,7 @@ const Page = () => {
     
     {/* <ReactLenis root options={{ duration: 1 }}> */}
 
+      <FixedIcons />
       <PageLoader>
       <div>
         <Navbar />
