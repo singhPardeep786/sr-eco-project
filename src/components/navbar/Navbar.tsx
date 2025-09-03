@@ -86,7 +86,9 @@ const Navbar = () => {
                     }`}
                   >
                     {item.label}
-                    <span className="absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--maincolor)] transition-all duration-300 group-hover:w-[80%]"></span>
+                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] transition-all duration-300 group-hover:w-[80%] ${
+                      scrolled ? 'bg-[var(--lightmaincolor2)]' : 'bg-[var(--maincolor)]'
+                    } `}></span>
                   </a>
                 ))}
               </div>
@@ -117,7 +119,9 @@ const Navbar = () => {
                     }`}
                   >
                     {item.label}
-                    <span className="absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--maincolor)] transition-all duration-300 group-hover:w-[80%]"></span>
+                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] transition-all duration-300 group-hover:w-[80%] ${
+                      scrolled ? 'bg-[var(--lightmaincolor2)]' : 'bg-[var(--maincolor)]'
+                    }`}></span>
                   </a>
                 ))}
               </div>
