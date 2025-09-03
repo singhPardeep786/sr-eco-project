@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <>
     
-    {/* <ReactLenis root options={{ duration: 1 }}> */}
+    <ReactLenis root options={{ duration: 1 }}>
 
       <FixedIcons />
       <PageLoader>
@@ -36,7 +36,7 @@ const Page = () => {
       </div>
       </PageLoader>
     
-    {/* </ReactLenis> */}
+    </ReactLenis>
     </>
   )
 }

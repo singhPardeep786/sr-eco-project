@@ -77,13 +77,13 @@ const Introduction = () => {
           height: animate.height, 
           borderRadius: "30px",
           y: animate.y, 
-          x: 0, // keep at right
+          x: 0,
           duration: 1.6, 
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: introBox,
-            start: "bottom bottom",
-            end: "bottom 60%",
+            start: "top 50%",
+            end: "top 20%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
@@ -118,8 +118,8 @@ const Introduction = () => {
           ease: "power2.out" ,
           scrollTrigger: {
             trigger: introBox,
-            start: "top 60%",
-            end: "top 40%",
+            start: "top 30%",
+            end: "top 20%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
@@ -137,8 +137,8 @@ const Introduction = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: introBox,
-            start: "top 60%",
-            end: "top 40%",
+            start: "top 30%",
+            end: "top 20%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
