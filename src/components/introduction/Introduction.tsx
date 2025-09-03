@@ -83,7 +83,7 @@ const Introduction = () => {
           scrollTrigger: {
             trigger: introBox,
             start: "top 50%",
-            end: "top 20%",
+            end: "top 15%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
@@ -119,7 +119,7 @@ const Introduction = () => {
           scrollTrigger: {
             trigger: introBox,
             start: "top 30%",
-            end: "top 20%",
+            end: "top 15%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
@@ -138,7 +138,7 @@ const Introduction = () => {
           scrollTrigger: {
             trigger: introBox,
             start: "top 30%",
-            end: "top 20%",
+            end: "top 15%",
             scrub: 1.2,
             // markers: true,
             toggleActions: "play reverse play reverse",
