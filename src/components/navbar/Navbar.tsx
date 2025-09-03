@@ -135,7 +135,7 @@ const Navbar = () => {
                   scrolled ? 'text-gray-900' : 'text-white'
                 }`}
                 aria-label="Toggle menu"
-                style={{ outline: 'none', border: 'none', background: 'none', padding: 0 }}
+                style={{ outline: 'none', border: 'none',  padding: 0 }}
               >
                 {/* Hamburger/Cross Lines - SMOOTH CROSS ANIMATION */}
                 <span

@@ -1068,9 +1068,7 @@ body {
     font-size: 0.8rem;
   }
   
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
-  }
+  
 
   .card {
     height: 60vh;
@@ -1165,8 +1163,14 @@ body {
     height: 150px;
   }
 
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
+  .intro_content h2 {
+    font-size: 1.48rem;
+    line-height: 1.6rem;
+  }
+
+  .intro_content p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
   }
 
   .card {
@@ -1261,8 +1265,14 @@ body {
     height: 150px;
   }
 
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
+  .intro_content h2 {
+    font-size: 1.48rem;
+    line-height: 1.6rem;
+  }
+
+  .intro_content p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
   }
 
   .card {
@@ -1367,10 +1377,16 @@ body {
     height: 150px;
   }
 
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
+  .intro_content h2 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
   }
 
+  .intro_content p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
   .card {
     height: 65vh;
   }
@@ -1489,8 +1505,9 @@ body {
     height: 200px;
   }
 
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
+  .intro_content h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .location_content {
@@ -1598,8 +1615,9 @@ body {
     height: 200px;
   }
 
-  .carousel::scroll-button(right), .carousel::scroll-button(left), .carousel2::scroll-button(right), .carousel2::scroll-button(left){
-    display: none;
+  .intro_content h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .location_content {
@@ -1712,6 +1730,11 @@ body {
     height: 200px;
   }
 
+  .intro_content h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  
   .location_content {
     width: 90%;
     padding: 1rem;
@@ -1800,9 +1823,15 @@ body {
     width: 200px;
     height: 200px;
   }
+  
   .bottom-right{
     width: 200px;
     height: 200px;
+  }
+
+  .intro_content h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .location_content {
