@@ -40,7 +40,7 @@ const Introduction = () => {
     // Large Desktop (>1200px)
     return {
       initial: { width: "18%", height: "180px", y: 0, x: 0 },
-      animate: { width: "40%", height: "420px", y: 30, x: 0 }
+      animate: { width: "35%", height: "350px", y: 150, x: 0 }
     }
   }
 
