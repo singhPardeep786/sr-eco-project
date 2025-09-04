@@ -82,7 +82,7 @@ const Introduction = () => {
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: introBox,
-            start: "top 50%",
+            start: "top 60%",
             end: "top 15%",
             scrub: 1.2,
             // markers: true,
@@ -118,7 +118,7 @@ const Introduction = () => {
           ease: "power2.out" ,
           scrollTrigger: {
             trigger: introBox,
-            start: "top 30%",
+            start: "top 40%",
             end: "top 15%",
             scrub: 1.2,
             // markers: true,
@@ -137,7 +137,7 @@ const Introduction = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: introBox,
-            start: "top 30%",
+            start: "top 35%",
             end: "top 15%",
             scrub: 1.2,
             // markers: true,
