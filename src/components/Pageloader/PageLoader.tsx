@@ -39,13 +39,13 @@ const PageLoader: React.FC<PageLoaderProps> = ({ children }) => {
     <>
       <div ref={pageLoader} className="w-full h-screen fixed z-[9999] top-0 left-0 overflow-hidden">
         <div className="w-full h-full flex"> 
-          <div className="loader_logo w-[20vw] md:w-[10%] lg:w-[15vw] xl:w-[10vw] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-3xl">
+          <div className="loader_logo w-[30vw] md:w-[20%] lg:w-[20vw] xl:w-[15vw] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-3xl">
             <img src="/images/logo1.png" className="w-full h-full" alt="Loader Logo" />
           </div>
           <div className="stair w-1/3 lg:w-1/5 h-screen bg-[var(--maincolor)]"></div>
-          <div className="stair w-1/3 lg:w-1/5 h-screen bg-[var(--blue)]"></div>
+          <div className="stair w-1/3 lg:w-1/5 h-screen bg-[var(--maincolor2)]"></div>
           <div className="stair w-1/3 lg:w-1/5 h-screen bg-[var(--maincolor)]"></div>
-          <div className="stair hidden lg:block w-1/5 h-screen bg-[var(--blue)]"></div>
+          <div className="stair hidden lg:block w-1/5 h-screen bg-[var(--maincolor2)]"></div>
           <div className="stair hidden lg:block w-1/5 h-screen bg-[var(--maincolor)]"></div>
         </div>
       </div>

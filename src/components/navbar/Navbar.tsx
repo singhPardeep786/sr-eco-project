@@ -82,20 +82,18 @@ const Navbar = () => {
                     className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
-                        : 'text-white md:text-gray-700'
+                        : 'text-white '
                     }`}
                   >
                     {item.label}
-                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] transition-all duration-300 group-hover:w-[80%] ${
-                      scrolled ? 'bg-[var(--lightmaincolor2)]' : 'bg-[var(--maincolor)]'
-                    } `}></span>
+                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--lightmaincolor)] transition-all duration-300 group-hover:w-[80%]`}></span>
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Logo - Center */}
-            <div className="flex-shrink-0 z-10 mt-5">
+            <div className="flex-shrink-0 z-10 mt-2">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
                 <a href="#home" className="inline-block">
                   <div className="logo mx-0 md:mx-auto">
@@ -115,13 +113,11 @@ const Navbar = () => {
                     className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
-                        : 'text-white md:text-gray-700'
+                        : 'text-white'
                     }`}
                   >
                     {item.label}
-                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] transition-all duration-300 group-hover:w-[80%] ${
-                      scrolled ? 'bg-[var(--lightmaincolor2)]' : 'bg-[var(--maincolor)]'
-                    }`}></span>
+                    <span className={`absolute bottom-[20%] left-[10%] w-0 h-2 z-[-1] bg-[var(--lightmaincolor)] transition-all duration-300 group-hover:w-[80%]`}></span>
                   </a>
                 ))}
               </div>

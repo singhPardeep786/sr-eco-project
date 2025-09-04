@@ -14,7 +14,7 @@ const FixedIcons = () => {
         <div className="first_icon transition-all duration-500">
           <a
             href="/brochure/SR Eco Park Brochure.pdf"
-            className="w-fit decoration-0 flex items-center justify-start gap-2 bg-[var(--blue)] text-white px-3 py-2 rounded-l-xl light uppercase text-md"
+            className="w-fit decoration-0 flex items-center justify-start gap-2 bg-[var(--maincolor2)] text-white px-3 py-2 rounded-l-xl light uppercase text-md"
             target="_blank"
             rel="noopener noreferrer"
           >

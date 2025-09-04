@@ -18,7 +18,7 @@ const Footer = () => {
         referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         </section>
-        <footer className="w-full bg-gradient-to-r from-[var(--blue)] to-[var(--maincolor)] footer py-8 text-white text-center">
+        <footer className="w-full bg-gradient-to-r from-[var(--maincolor2)] to-[var(--maincolor)] footer py-8 text-white text-center">
             <section className="wrapper">
                 <div className="md:flex">
                     <div className="w-full md:1/2">
