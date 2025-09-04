@@ -33,7 +33,7 @@ const Banner = () => {
         effect="fade"
         speed={1200}
         loop = {true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="mySwiper h-full"
       >
        

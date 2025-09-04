@@ -82,7 +82,7 @@ const Navbar = () => {
                     className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
-                        : 'text-white lg:text-gray-700'
+                        : 'text-white md:text-gray-700'
                     }`}
                   >
                     {item.label}
@@ -115,7 +115,7 @@ const Navbar = () => {
                     className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
-                        : 'text-white lg:text-gray-700'
+                        : 'text-white md:text-gray-700'
                     }`}
                   >
                     {item.label}
@@ -135,7 +135,7 @@ const Navbar = () => {
                   scrolled ? 'text-gray-900' : 'text-white'
                 }`}
                 aria-label="Toggle menu"
-                style={{ outline: 'none', border: 'none',  padding: 0 }}
+                style={{ outline: 'none', border: 'none', padding: 0 }}
               >
                 {/* Hamburger/Cross Lines - SMOOTH CROSS ANIMATION */}
                 <span
