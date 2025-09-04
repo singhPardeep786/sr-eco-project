@@ -2111,6 +2111,11 @@ body {
     font-size: 0.9rem;
   }
   
+  .location_content {
+    width: 80%;
+    padding: 1rem;
+  }
+  
   .location_content h3 {
     font-size: 1.7rem;
   }
@@ -2218,6 +2223,18 @@ body {
   .features_box h5 {
     font-size: 0.9rem;
   }
+
+  .location_content {
+    padding: 1rem;
+  }
+  
+  .location_content h3 {
+    font-size: 1.7rem;
+  }
+
+  .location_content p {
+    font-size: .9rem;
+  }
   
   .proximities_main {
     columns: 300px;
@@ -2294,6 +2311,18 @@ body {
 
   .features_box h5 {
     font-size: 0.9rem;
+  }
+
+  .location_content {
+    padding: 1rem;
+  }
+  
+  .location_content h3 {
+    font-size: 1.7rem;
+  }
+
+  .location_content p {
+    font-size: .9rem;
   }
   
   .proximities_main {
