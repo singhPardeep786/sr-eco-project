@@ -805,11 +805,11 @@ body {
 }
 
 .proximities:nth-of-type(5) img {
-  min-height: 583px;
+  min-height: 30.3vw;
 }
 
 .proximities:nth-of-type(8) img {
-  height: 310px;
+  height: 16.15vw;
 }
 
 
@@ -2180,12 +2180,12 @@ body {
     columns: 600px;
   }
 
-  .proximities img:nth-of-type(5) {
+  /* .proximities img:nth-of-type(5) {
     height: 620px;
   }
 
   .proximities img:nth-of-type(8){
     height: 330px;
-  }
+  } */
 
 }
