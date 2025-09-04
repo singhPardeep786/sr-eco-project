@@ -10,11 +10,11 @@ const FixedIcons = () => {
 
   return (
     <>
-      <div className="fixed_icons fixed top-[15%] right-0 z-[999]">
+      <div className="fixed_icons fixed top-[15%] right-0 z-[1]">
         <div className="first_icon transition-all duration-500">
           <a
             href="/brochure/SR Eco Park Brochure.pdf"
-            className="w-fit decoration-0 flex items-center justify-start gap-2 bg-[var(--blue)] text-white pl-3 pr-2 py-2 rounded-l-xl light uppercase text-md"
+            className="w-fit decoration-0 flex items-center justify-start gap-2 bg-[var(--blue)] text-white px-3 py-2 rounded-l-xl light uppercase text-md"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -27,7 +27,7 @@ const FixedIcons = () => {
         <div className="second_icon transition-all duration-500">
           <button
             type="button"
-            className="mt-[0.1rem] decoration-0 flex items-center gap-2 bg-[var(--blue)] text-white pl-3 pr-3 py-2 rounded-l-xl light uppercase text-md focus:outline-none cursor-pointer"
+            className="mt-[0.1rem] decoration-0 flex items-center gap-2 bg-[var(--maincolor)] text-white px-3 py-2 rounded-l-xl light uppercase text-md focus:outline-none cursor-pointer"
             onClick={() => setShowVideo(true)}
             aria-label="Open Walkthrough Video"
           >

@@ -78,23 +78,26 @@ body {
 /*=============FIXED===ICONS===START==========*/
 
 .fixed_icons {
-  width: fit-content;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
 }
 
 .first_icon {
-  width: fit-content;
-  transform: translateX(101%);
-}
-
-.first_icon:hover {
-  transform: translateX(30%);
+  width: auto;
+  transform: translateX(73%);
+  pointer-events: auto;
 }
 
 .second_icon {
-  width: fit-content;
+  width: auto;
   transform: translateX(78%);
+  pointer-events: auto;
 }
 
+.first_icon:hover,
 .second_icon:hover {
   transform: translateX(0);
 }
@@ -2359,5 +2362,4 @@ body {
   .proximities_main {
     columns: 600px;
   }
-
 }
