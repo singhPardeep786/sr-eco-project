@@ -71,7 +71,7 @@ const ParkAmenities = () => {
     <>
         <section className="wrapper">
         <h3 className="capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500">
-          outdoor amenities
+        Park amenities Two
         </h3>
         <div className="animated_line mb-5"></div>
         <div

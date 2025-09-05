@@ -78,7 +78,7 @@ const ClubhouseAmenities = () => {
         <h2 className="section_heading text-center">amenities</h2>
         <div className="heading-divider" />
         <h3 className="capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500">
-          clubhouse amenities
+          Park amenities one
         </h3>
         <div className="animated_line mb-5"></div>
         <div
