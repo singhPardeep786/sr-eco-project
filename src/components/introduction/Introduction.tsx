@@ -13,21 +13,21 @@ const Introduction = () => {
     if (width <= 450) {
       return {
         initial: { width: "30%", height: "80px", y: 0, x: 0 },
-        animate: { width: "95%", height: "320px", y: 50, x: 0 }
+        animate: { width: "95%", height: "220px", y: 0, x: 0 }
       }
     }
     // Medium Mobile (451px - 700px)
     if (width > 450 && width <= 700) {
       return {
         initial: { width: "30%", height: "120px", y: 0, x: 0 },
-        animate: { width: "80%", height: "350px", y: 50, x: 0 }
+        animate: { width: "80%", height: "250px", y: 0, x: 0 }
       }
     }
     // Tablet (701px - 900px)
     if (width > 700 && width <= 900) {
       return {
         initial: { width: "25%", height: "140px", y: 0, x: 0 },
-        animate: { width: "65%", height: "380px", y: 18, x: 0 }
+        animate: { width: "65%", height: "300px", y: 10, x: 0 }
       }
     }
     // Medium Desktop (901px - 1200px)
@@ -172,8 +172,8 @@ const Introduction = () => {
       <div id='intro'></div>
       <div className='w-full h-screen bg-zinc-800 intro_bg overflow-hidden relative'>
         <section className="wrapper h-full">
-          <div className='w-full h-full flex items-center justify-end relative'>
-            <div className='intro_content_box flex items-center justify-center relative'>
+          <div className='w-full h-full flex items-start justify-center md:items-center md:justify-end relative'>
+            <div className='intro_content_box flex items-center justify-center relative mt-5 md:mt-0'>
               <div className="intro_content p-5 rounded-2xl flex items-center justify-center flex-col text-center">
                 <h2 className='text-white'>Premium residential plots <br /> to build homes, lives and legacies</h2>
                 <p className='light'>In an era where apartment living has become increasingly common and people are seeking respite from the concrete jungle, the desire to build a home of dreams in a peaceful, picturesque setting has become stronger than ever</p>

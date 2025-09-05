@@ -736,9 +736,9 @@ body {
 
 .card_content {
   width: fit-content;
-  background-color: var(--lightgreen);
+  background-color: var(--maincolor2);
   backdrop-filter: blur(5px);
-  border-top-left-radius: 20px;
+  border-bottom-right-radius: 10px;
   padding: 1rem;
   text-transform: uppercase;
   text-align: start;
@@ -747,7 +747,7 @@ body {
 
 .card_content h5 {
   color: var(--color-gray-100);
-  transition: all ease 0.5s;
+  transition: all ease 0.5s;  
 }
 
 /*=============CLUBHOUSE===AMENITIES===SECTION===END==========*/
@@ -1015,11 +1015,20 @@ body {
     width: 70%;
   }
 
+  .slides_main {
+    height: 85vh;
+  }
+
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 101% 100%;
+  }
+
   .banner_content {
     width: fit-content;
-    top: 45%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1046,6 +1055,12 @@ body {
   .bottom-right{
     width: 120px;
     height: 120px;
+  }
+
+  .intro_bg {
+    height: 85vh;
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 160% 120%;
   }
 
   .intro_content h2 {
@@ -1127,11 +1142,21 @@ body {
     width: 70%;
   }
 
+  .slides_main {
+    height: 95vh;
+  }
+
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
     width: fit-content;
-    top: 45%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1160,6 +1185,12 @@ body {
     height: 150px;
   }
 
+  .intro_bg {
+    height: 95vh;
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 160% 100%;
+  }
+  
   .intro_content h2 {
     font-size: 1.48rem;
     line-height: 1.6rem;
@@ -1237,11 +1268,21 @@ body {
     width: 65%;
   }
 
+  .slides_main {
+    height: 95vh;
+  }
+
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
     width: 40%;
-    top: 45%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1261,11 +1302,18 @@ body {
     width: 150px;
     height: 150px;
   }
+
   .bottom-right{
     width: 150px;
     height: 150px;
   }
 
+  .intro_bg {
+    height: 95vh;
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 160% 100%;
+  }
+  
   .intro_content h2 {
     font-size: 1.48rem;
     line-height: 1.6rem;
@@ -1354,15 +1402,21 @@ body {
   }
 
   .links {
-    font-size: 0.6rem;
+    font-size: 0.59rem;
     margin: 0;
   }
 
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
-    width: 41%;
-    top: 45%;
+    width: 40%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1385,6 +1439,12 @@ body {
   .bottom-right{
     width: 150px;
     height: 150px;
+  }
+
+  .intro_bg {
+    height: 95vh;
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 120% 100%;
   }
 
   .intro_content h2 {
@@ -1503,22 +1563,28 @@ body {
     margin: 0;
   }
 
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
-    width: 41%;
-    top: 45%;
+    width: 33%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
   .banner_content h1 {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -1528,14 +1594,20 @@ body {
   }
 
   .bottom-left{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
   .bottom-right{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 
+  .intro_bg {
+    height: 98vh;
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 100% 100%;
+  }
+  
   .intro_content h2 {
     font-size: 1.8rem;
     line-height: 1.8rem;
@@ -1634,11 +1706,17 @@ body {
     margin: 0;
   }
 
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
     width: 32%;
-    top: 45%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1659,12 +1737,18 @@ body {
   }
 
   .bottom-left{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
   .bottom-right{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .intro_bg {
+    /* height: 98vh; */
+    background: url('/images/outdoors/mob_intro_bg.jpg')no-repeat;
+    background-size: 100% 100%;
   }
 
   .intro_content h2 {
@@ -1786,11 +1870,17 @@ body {
     padding: 0;
   }
   
+  .slide1 {
+    background: url('/images/outdoors/mob_entrance.jpg')no-repeat;
+    background-size: 102% 100%;
+    background-position-x: -0.15rem;
+  }
+  
   .banner_content {
     width: 30%;
-    top: 45%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -25%);
     padding: 1rem;
   }
   
@@ -1909,11 +1999,16 @@ body {
     margin-right: 0.7rem;
   }
 
+  .slide1 {
+    /* background: url('/images/outdoors/mob_entrance.jpg')no-repeat;  */
+    background-size: 132% 110%;
+  }
+  
   .banner_content {
     width: 23%;
-    top: 30%;
+    top: 26%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -26%);
     padding: 1rem;
   }
   

@@ -246,7 +246,7 @@ const Features: React.FC = () => {
         <div className="flex flex-col gap-10 items-start w-full mt-8">
           {/* Clubhouse Features */}
           <div className="w-full">
-            <h3 className="features-section-title">Clubhouse Features</h3>
+            <h3 className="features-section-title">Park Features</h3>
             <div className="animated_line mb-8"></div>
             {clubhouseRows.map((row, idx) => (
               <div className={getRowClass(row)} key={`clubhouse-row-${idx}`}>
@@ -263,7 +263,7 @@ const Features: React.FC = () => {
           </div>
           {/* Park Features */}
           <div className="w-full">
-            <h3 className="features-section-title">Park Features</h3>
+            <h3 className="features-section-title">Outdoor Features</h3>
             <div className="animated_line mb-8"></div>
             {parkRows.map((row, idx) => (
               <div className={getRowClass(row)} key={`park-row-${idx}`}>

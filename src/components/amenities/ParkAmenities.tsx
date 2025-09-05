@@ -37,46 +37,42 @@ const ParkAmenities = () => {
     const cards = [
       {
         img: "/images/outdoors/lawn.jpg",
-        txt1: "Every Day",
-        txt2: "is a Living Canvas."
+        txt1: "LAWN",
+        // txt2: "is a Living Canvas."
       },
       {
         img: "/images/outdoors/yoga.jpg",
-        txt1: "Every Breath is a",
-        txt2: "Soulful Restoration."
+        txt1: "YOGA",
+        // txt2: "Soulful Restoration."
       },
       {
         img: "/images/outdoors/children_play_area.jpg",
-        txt1: "Every Leap",
-        txt2: "is Safe and Soft."
+        txt1: "CHILDREN PLAY AREA",
+        // txt2: "is Safe and Soft."
       },
       {
         img: "/images/outdoors/swirling_hills.jpg",
-        txt1: "Every Whisper",
-        txt2: "is Natural and Endless."
+        txt1: "SWIRLING HILLS",
+        // txt2: "is Natural and Endless."
       },
       {
         img: "/images/outdoors/badminton.jpg",
-        txt1: "Every Rally is a",
-        txt2: "Display of Agility and Joy."
+        txt1: "BADMINTON COURT",
+        // txt2: "Display of Agility and Joy."
       },
       {
         img: "/images/outdoors/cricket_net.jpg",
-        txt1: "Every Game",
-        txt2: "is Fuel for Refinement."
+        txt1: "CRICKET PRACTICE NET",
+        // txt2: "is Fuel for Refinement."
       }
     ]
     
   return (
     <>
         <section className="wrapper">
-        <h3 className="capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500">
-        Park amenities Two
-        </h3>
-        <div className="animated_line mb-5"></div>
-        <div
-          className="relative"
-        >
+        {/* <h3 className="capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500">Park amenities Two</h3>
+        <div className="animated_line mb-5"></div> */}
+        <div className="relative mt-8">
           <Swiper
             modules={[Pagination, A11y, Autoplay]}
             pagination={{ clickable: true }}
@@ -98,11 +94,11 @@ const ParkAmenities = () => {
                   <img
                     src={content.img}
                     className="w-full h-full object-cover"
-                    alt="sr eco park clubhouse amenity"
+                    alt="sr eco park amenities"
                   />
-                  <div className="card_content absolute bottom-0 right-0">
+                  <div className="card_content absolute top-0 left-0">
                     <h5>{content.txt1}</h5>
-                    <h5>{content.txt2}</h5>
+                    {/* <h5>{content.txt2}</h5> */}
                   </div>
                 </div>
               </SwiperSlide>

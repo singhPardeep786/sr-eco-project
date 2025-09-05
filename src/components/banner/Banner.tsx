@@ -12,7 +12,7 @@ const Banner = () => {
  
   return (
     <>
-    <div className="slides_main mt-[-6.5rem] lg:mt-[-6rem] xl:mt-[-6.5rem] relative">
+    <div className="slides_main mt-[-20.5%] md:mt-[-6.5rem] lg:mt-[-6rem] xl:mt-[-6.5rem] relative">
       <Swiper
         pagination={{ clickable: true }}
         modules={[Autoplay, EffectFade, Keyboard, Pagination]}
@@ -20,7 +20,7 @@ const Banner = () => {
         effect="fade"
         speed={1200}
         loop = {true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="mySwiper h-full"
       >
        
