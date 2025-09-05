@@ -6,23 +6,10 @@ import { Autoplay, EffectFade, Keyboard, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-// import { AnimatedText } from "./animatedText/AnimatedText";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Banner = () => {
-  // const slides = [
-  //     {
-  //         smallTitle: "introducing",
-  //         title: "SR Eco Park",
-  //         desc: "In an era where apartment living has become increasingly common and people are seeking respite from the concrete jungle, the desire to build a home of dreams in a peaceful, picturesque setting has become stronger than ever",
-  //     },
-  //     {
-  //         smallTitle: "Premium residential plots",
-  //         title: " lives and legacies",
-  //         desc: "In an era where apartment living has become increasingly common and people are seeking respite from the concrete jungle, the desire to build a home of dreams in a peaceful, picturesque setting has become stronger than ever",
-  //     },
-  // ]
-
+ 
   return (
     <>
     <div className="slides_main mt-[-6.5rem] lg:mt-[-6rem] xl:mt-[-6.5rem] relative">

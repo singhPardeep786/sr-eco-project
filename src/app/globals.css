@@ -221,11 +221,11 @@ body {
 }
 
 .banner_content {
-  width: clamp(350px, 50%, 390px);
+  width: clamp(350px, 40%, 350px);
   background-color: var(--maincolor);
   border-radius: 20px;
   position: absolute;
-  padding: 2rem;
+  padding: 1.5rem;
   top: 30%;
   left: 5%;
   transform: translate(-5%, -30%);
@@ -233,7 +233,7 @@ body {
 }
 
 .banner_content h5 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   color: var(--bodybg);
   transform: translateY(100%);
@@ -243,7 +243,7 @@ body {
 }
 
 .banner_content h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--white);
   text-transform: uppercase;
   transform: translateY(-100%);
@@ -259,29 +259,9 @@ body {
   transform: translateY(-0%);
 }
 
-/* .small_heading {
-  transform: translateX(0%);
-  transition: all ease .7s;
-}
-
-.main_heading {
-  transform: translateX(0%);
-  transition: all ease .7s;
-}
-
-.swiper-fade .swiper-slide-active .small_heading {
-  transition-delay: 1s;
-  transform: translateX(-10%);
-}
-
-.swiper-fade .swiper-slide-active .main_heading {
-  transition-delay: 1s;
-  transform: translateX(10%);
-} */
-
 .bottom-left {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background-color: var(--white);
   border-radius: 25%;
   position: absolute;
@@ -301,8 +281,8 @@ body {
 }
 
 .bottom-right {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background-color: var(--maincolor);
   border-radius: 25%;
   position: absolute;
@@ -1254,25 +1234,21 @@ body {
   }
   
   .logo{
-    width: 80%;
+    width: 65%;
   }
 
   .banner_content {
-    width: fit-content;
+    width: 40%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
     padding: 1rem;
   }
   
-  .banner_content h5 {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-
+  .banner_content h5,
   .banner_content h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -1390,14 +1366,10 @@ body {
     padding: 1rem;
   }
   
-  .banner_content h5 {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-  }
-
+  .banner_content h5,
   .banner_content h1 {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 4vmax;
+    line-height: 4vmax;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -2371,9 +2343,8 @@ body {
   .banner_content {
     width: 18%;
     top: 40%;
-    /* left: -0.1%; */
     transform: translateY(-40%);
-    padding: 1.3rem;
+    padding: 1.1rem;
   }
 
   .banner_content h5,
@@ -2402,6 +2373,12 @@ body {
 
   .proximities:nth-of-type(8) img{
     height: 15.9vw;
+  }
+}
+
+@media (min-width:1650px) and (max-width: 1850px){
+  .banner_content{
+    width: 15%;
   }
 }
 
