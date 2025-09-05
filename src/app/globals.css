@@ -2354,13 +2354,13 @@ body {
   }
 
   .bottom-left{
-    width: 230px;
-    height: 230px;
+    width: 245px;
+    height: 245px;
   }
 
   .bottom-right{
-    width: 230px;
-    height: 230px;
+    width: 245px;
+    height: 245px;
   }
   
   .proximities_main {
@@ -2371,7 +2371,7 @@ body {
     min-height: 30.5vw;
   }
 
-  .proximities:nth-of-type(8) img{
+  .proximities:nth-of-type(8) img {
     height: 15.9vw;
   }
 }
