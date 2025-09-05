@@ -1924,6 +1924,10 @@ body {
 }
 
 @media (min-width:1024px) and (max-width: 1200px){
+
+  .nav_bg {
+    margin-top: 0.5rem;
+  }
   
   .logo{
     width: 95%;
@@ -1934,21 +1938,21 @@ body {
   }
 
   .banner_content {
-    width: 25%;
-    top: 45%;
+    width: 23%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -30%);
     padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2.1rem;
-    line-height: 2.1rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .banner_content h1 {
-    font-size: 2.1rem;
-    line-height: 2.1rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -2046,6 +2050,7 @@ body {
 
   .nav_bg {
     width: 85%;
+    margin-top: 0.5rem;
   }
   
   .links {
@@ -2053,21 +2058,21 @@ body {
   }
 
   .banner_content {
-    width: 25%;
-    top: 25%;
+    width: 20%;
+    top: 28%;
     left: 5%;
-    transform: translate(-5%, -25%);
-    padding: 1.5rem;
+    transform: translate(-5%, -28%);
+    padding: 1rem;
   }
   
   .banner_content h5 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .banner_content h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -2077,12 +2082,12 @@ body {
   }
 
   .bottom-left{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   .bottom-right{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 
   .intro_content_box {
@@ -2161,6 +2166,10 @@ body {
 
 @media (min-width:1270px) and (max-width: 1300px){
 
+  .nav_bg {
+    margin-top: 0.5rem;
+  }
+  
   .links {
     margin-right: 1rem;
   }
@@ -2170,17 +2179,17 @@ body {
   }
 
   .banner_content {
-    width: 25%;
-    top: 25%;
+    width: 20%;
+    top: 30%;
     left: 5%;
-    transform: translate(-5%, -25%);
-    padding: 1.5rem;
+    transform: translate(-5%, -30%);
+    padding: 1rem;
   }
   
   .banner_content h5,
   .banner_content h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
@@ -2190,12 +2199,12 @@ body {
   }
 
   .bottom-left{
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
   }
   .bottom-right{
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
   }
 
   .intro_content_box {
@@ -2274,17 +2283,27 @@ body {
 @media (min-width:1301px) and (max-width: 1450px) {
 
   .banner_content {
-    width: 21%;
-    top: 25%;
+    width: 20%;
+    top: 30%;
     left: 5%;
-    transform: translate(-5%, -25%);
-    padding: 1.3rem;
+    transform: translate(-5%, -30%);
+    padding: 1rem;
   }
-
+  
   .banner_content h5,
   .banner_content h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+
+  .bottom-left{
+    width: 220px;
+    height: 220px;
+  }
+
+  .bottom-right{
+    width: 220px;
+    height: 220px;
   }
   
   .intro_content_box {
@@ -2344,42 +2363,33 @@ body {
   .project_img {
     height: 300px;
   }
-
-  .bottom-left{
-    width: 250px;
-    height: 250px;
-  }
-
-  .bottom-right{
-    width: 250px;
-    height: 250px;
-  }
   
 }
 
 @media (min-width:1451px) and (max-width: 1850px){
 
   .banner_content {
-    width: 20%;
-    top: 25%;
-    left: 5%;
-    transform: translate(-5%, -25%);
+    width: 18%;
+    top: 40%;
+    /* left: -0.1%; */
+    transform: translateY(-40%);
     padding: 1.3rem;
   }
 
   .banner_content h5,
   .banner_content h1 {
-    font-size: 2.2rem;
-    line-height: 2.2rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
   .bottom-left{
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
   }
+
   .bottom-right{
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
   }
   
   .proximities_main {
