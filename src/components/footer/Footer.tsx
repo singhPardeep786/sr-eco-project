@@ -65,7 +65,7 @@ const Footer = () => {
                 
                 <div className="w-full mt-4">
                     <div className="copyright text-center">
-                        <p className="mt-3">&copy; {year} <span className="medium"> SR PROJECTS</span>. All Rights Reserved</p>
+                        <p className="mt-4">&copy; {year} <span className="medium"> SR PROJECTS</span>. All Rights Reserved</p>
                     </div>
                 </div>
             </section>
