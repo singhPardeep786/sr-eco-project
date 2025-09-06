@@ -1103,6 +1103,10 @@ body {
     min-height: 50vw;
   } 
 
+  .proximities:nth-of-type(8) img {
+    height: 100%;
+  }
+
   .about {
     width: 90%;
     text-align: center;
@@ -1154,9 +1158,9 @@ body {
   
   .banner_content {
     width: fit-content;
-    top: 25%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -30%);
     padding: 1rem;
   }
   
@@ -1229,6 +1233,10 @@ body {
   .proximities:nth-of-type(5) img {
     min-height: 30.8vw;
   }
+
+  .proximities:nth-of-type(8) img {
+    height: 100%;
+  }
   
   .about {
     width: 90%;
@@ -1280,9 +1288,9 @@ body {
   
   .banner_content {
     width: 40%;
-    top: 25%;
+    top: 28%;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -28%);
     padding: 1rem;
   }
   
@@ -1351,6 +1359,10 @@ body {
     min-height: 30.8vw;
   }
 
+  .proximities:nth-of-type(8) img {
+    height: 100%;
+  }
+  
   .about {
     width: 90%;
     text-align: center;
@@ -1414,9 +1426,9 @@ body {
   
   .banner_content {
     width: 40%;
-    top: 25%;
+    top: 29%;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -29%);
     padding: 1rem;
   }
   
@@ -1504,8 +1516,8 @@ body {
     min-height: 30.8vw;
   }
 
-  .proximities:nth-of-type(8) img{
-    height: 15.9vw;
+  .proximities:nth-of-type(8) img {
+    height: 100%;
   }
 
   .about {
@@ -1669,8 +1681,8 @@ body {
     min-height: 30.8vw;
   }
 
-  .proximities:nth-of-type(8) img{
-    height: 15.9vw;
+  .proximities:nth-of-type(8) img {
+    height: 100%;
   }
 
   .project_logo {
