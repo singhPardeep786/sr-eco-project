@@ -241,7 +241,7 @@ const Features: React.FC = () => {
     <>
       <div id='features'></div>
       <section className='wrapper my-8'>
-        <h2 className='text-center section_heading mt-5'>features</h2>
+        <h2 className='text-center section_heading mt-[2.5rem]'>features</h2>
         <div className="heading-divider" />
         <div className="flex flex-col gap-10 items-start w-full mt-8">
           {/* Clubhouse Features */}

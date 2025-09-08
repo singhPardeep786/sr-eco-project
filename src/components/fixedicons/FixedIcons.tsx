@@ -10,7 +10,7 @@ const FixedIcons = () => {
 
   return (
     <>
-      <div className="fixed_icons fixed top-[15%] right-0 z-[1]">
+      <div className="fixed_icons fixed top-[30%] right-0 z-[1]">
         <div className="first_icon transition-all duration-500">
           <a
             href="/brochure/SR Eco Park Brochure.pdf"
