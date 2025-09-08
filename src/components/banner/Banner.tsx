@@ -47,8 +47,7 @@ const Banner = () => {
                   </a> */}
                 </div>
                 <div>
-                    <span className="scroll_arrow_div flex items-center justify-center">
-                    </span>
+                    <span className="scroll_arrow_div flex items-center justify-center"></span>
                   {/* <a href="#">
                   </a> */}
                 </div>
@@ -78,8 +77,7 @@ const Banner = () => {
                   </a> */}
                 </div>
                 <div>
-                    <span className="scroll_arrow_div flex items-center justify-center">
-                    </span>
+                    <span className="scroll_arrow_div flex items-center justify-center"></span>
                   {/* <a href="#">
                   </a> */}
                 </div>
