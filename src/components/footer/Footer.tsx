@@ -8,17 +8,25 @@ const Footer = () => {
 
   return (
     <>
+        {/* <style jsx>{`
+            .i4ewOd-pzNkMb-haAclf {
+                display: none!important;
+                opacity: 0!important;
+                visibility: hidden!important;
+            }
+        `}</style> */}
         <div id='contact'></div>
-        <section className="w-full mt-8">
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7619.393593178645!2d78.53933274893623!3d17.281897805226347!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba3c5d0a32dc9%3A0x70e18b6d9be4713c!2sSR%20GROUP!5e0!3m2!1sen!2sus!4v1756724798910!5m2!1sen!2sus"
-        width={"100%"}
-        height={450}
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <section className="w-full relative">
+            <div className="absolute top-0 left-0 bg-[#fdf4e5] w-full h-16"></div>
+            <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1UtJcchCEfpXADr3eBeQvUEgzxLSpgok&ehbc=2E312F"
+            width={"100%"}
+            height={450}
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
         </section>
         <footer className="w-full bg-gradient-to-r from-[var(--maincolor2)] to-[var(--maincolor)] footer py-8 text-white text-center">
             <section className="wrapper">

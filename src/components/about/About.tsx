@@ -110,9 +110,9 @@ const About = () => {
                 </div>
             </div>
 
-            <h3 className='capitalize mt-5 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500'>Featured projects</h3>
+            <h3 className='capitalize mt-8 text-[1.7rem] md:text-[2.3rem] text-[var(--blue)] transition-all duration-500'>Featured projects</h3>
             <div className="animated_line mb-5"></div>
-            <div className='w-full h-full flex items-center justify-start gap-3 ongoing_projects_main overflow-x-auto transition-all duration-500'>
+            <div className='w-full h-full flex items-center justify-start gap-3 ongoing_projects_main overflow-x-auto transition-all duration-500 z-[2]'>
                     {projects.map((elem, idx) =>
                         <div key={idx} className="ongoing_project text-center transition-all duration-500">
                             <div className="project_img">
