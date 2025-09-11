@@ -43,7 +43,7 @@ const Proximities = () => {
   return (
     <>
         <div>
-            <h2 className='section_heading text-center mt-8'>proximities</h2>
+            <h2 className='section_heading text-center mt-10'>proximities</h2>
             <div className="heading-divider" />
             <div className="proximities_main">
                 {proximity.map((content, idx)=>
