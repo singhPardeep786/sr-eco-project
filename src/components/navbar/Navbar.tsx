@@ -29,7 +29,7 @@ const Navbar = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          setScrolled(currentScrollY > 50);
+          setScrolled(currentScrollY > 50)
 
           if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
             setShowNavbar(false);
