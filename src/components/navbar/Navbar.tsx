@@ -29,7 +29,7 @@ const Navbar = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          setScrolled(currentScrollY > 50);
+          setScrolled(currentScrollY > 50)
 
           if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
             setShowNavbar(false);
@@ -134,7 +134,7 @@ const Navbar = () => {
                 style={{ outline: 'none', border: 'none', padding: 0 }}
               >
                 {/* Hamburger/Cross Lines - SMOOTH CROSS ANIMATION */}
-                <span
+                <span 
                   className="absolute left-1/2 top-1/2 w-6 h-0.5 bg-current rounded transition-all duration-400 ease-in-out"
                   style={{
                     transform: isOpen
