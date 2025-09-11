@@ -674,7 +674,7 @@ body {
   border-radius: 2px;
   margin: 0.5rem auto 2rem auto;
 }
-.masterplan-glass {
+/* .masterplan-glass {
   background: rgba(255,255,255,0.18);
   box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
   backdrop-filter: blur(8px);
@@ -688,7 +688,7 @@ body {
 .masterplan-glass:hover {
   box-shadow: 0 12px 48px 0 rgba(30,144,255,0.13);
   transform: translateY(-2px) scale(1.01);
-}
+} */
 .masterplan-img {
   width: 100%;
   height: auto;
