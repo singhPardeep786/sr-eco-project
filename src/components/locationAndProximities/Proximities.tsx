@@ -49,7 +49,7 @@ const Proximities = () => {
                 {proximity.map((content, idx)=>
                     <div className="proximities rounded-5 relative" key={idx}>
                         <img src={content.img} 
-                        className='w-full h-full object-cover transition-all duration-500 mt-5 rounded-5' 
+                        className='w-full h-full object-cover transition-all duration-500 mt-4 rounded-5' 
                         style={{borderRadius: "10px"}}
                         alt="sr eco park proximities" />
                         <h6 className='absolute top-0 left-0'>{content.txt}</h6>
