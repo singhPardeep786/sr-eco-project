@@ -8,6 +8,19 @@ const FixedIcons = () => {
 
     const WALKTHROUGH_VIDEO_URL = "/images/video.mp4";
 
+    const playClickSound = () => {
+        const audio = new Audio('/click_sounds/walkthrough_click.mp3');
+        audio.volume = 1;
+        audio.play().catch(error => {
+            console.log('Audio play failed:', error);
+        });
+    };
+
+    const handleVideoClick = () => {
+        playClickSound();
+        setShowVideo(true);
+    };
+
   return (
     <>
       <div className="fixed_icons fixed top-[30%] right-0 z-[1]">
@@ -17,6 +30,7 @@ const FixedIcons = () => {
             className="w-fit decoration-0 flex items-center justify-start gap-2 bg-[var(--maincolor2)] text-white px-3 py-2 rounded-l-xl light uppercase text-md"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={playClickSound}
           >
             <span>
               <Icon icon="gala:brochure" className="fixed_icon text-lg" />
@@ -28,7 +42,7 @@ const FixedIcons = () => {
           <button
             type="button"
             className="mt-[0.1rem] decoration-0 flex items-center gap-2 bg-[var(--maincolor)] text-white px-3 py-2 rounded-l-xl light uppercase text-md focus:outline-none cursor-pointer"
-            onClick={() => setShowVideo(true)}
+            onClick={handleVideoClick}
             aria-label="Open Walkthrough Video"
           >
             <span>

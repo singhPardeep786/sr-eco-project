@@ -51,7 +51,32 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
+    responsiveMenuClick()
   };
+
+  const playSound = () => {
+    const audio = new Audio('/click_sounds/menu_click.mp3');
+    audio.volume = 1;
+    audio.play().catch(error => {
+      console.log("Error occuring ", error);
+    });
+  };
+
+  const logoClick = () => {
+    const audio = new Audio('/click_sounds/click_menu.mp3');
+    audio.volume = 1;
+    audio.play().catch(error => {
+      console.log("Error Occuring ", error);
+    })
+  }
+
+  const responsiveMenuClick = () => {
+    const audio = new Audio("/click_sounds/click.mp3");
+    audio.volume = 1;
+    audio.play().catch(error => {
+      console.log("Error Occuring ", error);
+    })
+  }
 
   return (
     <>
@@ -79,6 +104,7 @@ const Navbar = () => {
                     key={item.href}
                     href={item.href}
                     target={item.target}
+                    onClick={playSound}
                     className={`px-3 py-2 text-[.8rem] links uppercase transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
@@ -95,7 +121,7 @@ const Navbar = () => {
             {/* Logo - Center */}
             <div className="flex-shrink-0 z-10 mt-2">
               <div className="font-bold transition-colors duration-300 w-32 sm:w-40 md:w-48 lg:w-30">
-                <a href="#home" className="inline-block">
+                <a href="#home" className="inline-block" onClick={logoClick}>
                   <div className="logo mx-0 md:mx-auto">
                     <img src="/images/logo.png" className="w-full h-full" alt="SR Eco Park Logo" />
                   </div>
@@ -110,6 +136,7 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={item.href}
+                    onClick={playSound}
                     className={`px-3 py-2 text-[.8rem] uppercase links transition-all duration-300 hover:scale-105 relative group rounded-md ${
                       scrolled
                         ? 'text-[var(--white)]'
