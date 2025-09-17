@@ -38,7 +38,7 @@ const FixedIcons = () => {
             <span>Brochure</span>
           </a>
         </div>
-        <div className="second_icon transition-all duration-500">
+        {/* <div className="second_icon transition-all duration-500">
           <button
             type="button"
             className="mt-[0.1rem] decoration-0 flex items-center gap-2 bg-[var(--maincolor)] text-white px-3 py-2 rounded-l-xl light uppercase text-md focus:outline-none cursor-pointer"
@@ -50,10 +50,10 @@ const FixedIcons = () => {
             </span>
             <span>Walkthrough</span>
           </button>
-        </div>
+        </div> */}
       </div>
 
-      {showVideo && (
+      {/* {showVideo && (
         <div
           className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={() => setShowVideo(false)}
@@ -78,7 +78,7 @@ const FixedIcons = () => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
