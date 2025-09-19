@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 type Amenity = {
   className: string;
   icon: ReactNode;
-  desc: string;
+  desc: ReactNode;
 };
 
 const clubhouseAmenities: Amenity[] = [
@@ -22,12 +22,20 @@ const clubhouseAmenities: Amenity[] = [
   {
     className: "features_box",
     icon: <Icon icon="game-icons:road" className='icon' />,
-    desc: "40’ and 30’ CC Roads"
+    desc: (
+      <>
+        40’ and 30’ <br /> CC Roads
+      </>
+    )
   },
   {
     className: "features_box",
     icon: <Icon icon="mdi:wall" className='icon' />,
-    desc: "Compound Wall on All Sides"
+    desc: (
+      <>
+        Compound Wall <br /> on All Sides
+      </>
+    )
   },
   {
     className: "features_box",
@@ -37,7 +45,11 @@ const clubhouseAmenities: Amenity[] = [
   {
     className: "features_box",
     icon: <Icon icon="uil:water" className='icon' />,
-    desc: "Provision for Krishna Water"
+    desc: (
+      <>
+        Provision for <br /> Krishna Water
+      </>
+    ),
   },
   {
     className: "features_box",
@@ -57,7 +69,11 @@ const clubhouseAmenities: Amenity[] = [
   {
     className: "features_box",
     icon: <Icon icon="game-icons:warp-pipe" className='icon' />,
-    desc: "Underground Drainage"
+    desc: (
+      <>
+        Underground <br /> Drainage
+      </>
+    )
   },
   {
     className: "features_box",
@@ -95,7 +111,11 @@ const parkAmenities: Amenity[] = [
   {
     className: "features_box",
     icon: <Icon icon="eos-icons:sandbox" className='icon' />,
-    desc: "Sand Pit for Tot-lots"
+    desc: (
+      <>
+        Sand Pit for <br /> Tot-lots
+      </>
+    )
   },
   {
     className: "features_box",
@@ -105,7 +125,11 @@ const parkAmenities: Amenity[] = [
   {
     className: "features_box",
     icon: <Icon icon="mdi:playground-slide" className='icon' />,
-    desc: "EPDM Play Court for Kids"
+    desc: (
+      <>
+        EPDM Play Court <br /> for Kids
+      </>
+    )
   },
   {
     className: "features_box",
@@ -239,47 +263,63 @@ const Features: React.FC = () => {
   
   return (
     <>
-      <div id='features'></div>
-      <section className='wrapper my-8'>
-        <h2 className='text-center section_heading mt-10'>features</h2>
+      <div id="features" />
+      <div className="wrapper mt-8">
+        <h2 className="text-center section_heading mt-10">Features</h2>
         <div className="heading-divider" />
-        <div className="flex flex-col gap-10 items-start w-full mt-8">
-          {/* Clubhouse Features */}
-          <div className="w-full">
-            <h3 className="features-section-title">Park Features</h3>
-            <div className="animated_line mb-8"></div>
-            {clubhouseRows.map((row, idx) => (
-              <div className={getRowClass(row)} key={`clubhouse-row-${idx}`}>
-                {row.map((box, i) => (
-                  <div className={box.className} key={`clubhouse-box-${idx}-${i}`}>
-                    <div className="features_icon">
-                      {box.icon}
-                    </div>
-                    <h5 className='capitalize font-bold'>{box.desc}</h5>
+        <h3 className="features-section-title">Park Features</h3>
+          <div className="animated_line mb-8"></div>
+      </div>
+      <div className="flex flex-col gap-10 items-start w-full mt-8">
+        {/* Park Features */}
+        <div className="w-full h-full features_outside_mainBox py-12">
+          <section className='wrapper'>
+              <div className="w-fit park_features_main pt-15 pb-8">
+                {clubhouseRows.map((row, idx) => (
+                  <div className={getRowClass(row)} key={`clubhouse-row-${idx}`}>
+                    {row.map((box, i) => (
+                      <div className={box.className} key={`clubhouse-box-${idx}-${i}`}>
+                        <div className="features_icon">
+                          {box.icon}
+                        </div>
+                        <h5 className="capitalize font-bold">{box.desc}</h5>
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
-            ))}
+            </section>
           </div>
-          {/* Park Features */}
-          <div className="w-full">
-            <h3 className="features-section-title">Outdoor Features</h3>
-            <div className="animated_line mb-8"></div>
+        {/* <div className="w-full">
+          
+        </div> */}
+        {/* Outdoor Features */}
+        <div className="wrapper">
+          <h3 className="features-section-title">Outdoor Features</h3>
+          <div className="animated_line mb-3"></div>
+        </div>
+        <div className="features_outside_mainBox2 py-12">
+          <section className='wrapper'>
+
+          <div className="w-fit outside_features_main pt-15 pb-8">
+            
             {parkRows.map((row, idx) => (
               <div className={getRowClass(row)} key={`park-row-${idx}`}>
                 {row.map((box, i) => (
-                  <div className={box.className} key={`park-box-${idx}-${i}`}>
+                  <div className={`${box.className} green_color`} key={`park-box-${idx}-${i}`}>
                     <div className="features_icon">
                       {box.icon}
                     </div>
-                    <h5 className='capitalize font-bold'>{box.desc}</h5>
+                    <h5 className="capitalize font-bold">{box.desc}</h5>
                   </div>
                 ))}
               </div>
             ))}
           </div>
+          </section>
         </div>
-      </section>
+        
+      </div>
     </>
   )
 }
