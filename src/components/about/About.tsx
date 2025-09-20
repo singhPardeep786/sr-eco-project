@@ -104,7 +104,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className='w-full md:w-1/2'>
-                    <div className="about_img rounded-xl overflow-hidden">
+                    <div className="about_img rounded-[1.5rem] overflow-hidden">
                         <img src="/images/about_img.jpg" className='w-full h-full' alt="about image" />
                     </div>
                 </div>
