@@ -4,7 +4,6 @@ import React from 'react'
 const Proximities = () => {
 
     const proximity = [
-        // Arranged for better visual balance: airport, ORR, TCS, WTC, Wonderla, Fab City, MVSR, Aghakhan
         {
             img: "/images/location_and_proximity/airport.jpg",
             txt: "Rajiv Gandhi Intl. Airport"
