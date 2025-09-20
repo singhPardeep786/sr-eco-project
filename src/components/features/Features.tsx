@@ -310,7 +310,7 @@ const Features: React.FC = () => {
                     <div className="features_icon">
                       {box.icon}
                     </div>
-                    <h5 className="capitalize font-bold">{box.desc}</h5>
+                    <h5 className="capitalize font-bold text-[var(--greenicon)!important]">{box.desc}</h5>
                   </div>
                 ))}
               </div>

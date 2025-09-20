@@ -51,9 +51,10 @@ body {
   --maincolor2: #ba862a;
   --bodybg: #fcf1ddc5;
   --green: #0aaf9c;
-  --green2: #0aaf9cc4;
+  --green2: #0fb4a1b4;
+  --greenicon: #b6f8f0;
   --lightgreen: #0aaf9ca9;
-  --lightgreen2:rgba(10, 175, 156, 0.39)9;
+  --lightgreen2:rgba(10, 175, 156, 0.39);
   --gray: #7b7c7f;
   --black: #1E293B;
   --white: #fff;
@@ -650,6 +651,10 @@ body {
   bottom: -150%;
 }
 
+.green_color .features_icon .icon {
+  color: var(--greenicon);
+}
+
 .features_icon .icon {
   font-size: 2.7rem;
   color: var(--black);
@@ -658,7 +663,7 @@ body {
 
 .features_box h5 {
   font-family: 'light';
-  color: var(--black  );
+  color: var(--black);
   font-size: 0.9rem;
   font-weight: 600;
   transition: all ease 0.5s;
