@@ -69,7 +69,7 @@ const Banner = () => {
             <span className="bottom-right"></span>
             <div className="scroll_downIcon_section flex items-center justify-center w-full">
               <div className="arrow_main_box">
-              <div>
+                <div>
                     <span className="arrow_icon flex items-center justify-center">
                       <Icon icon="line-md:arrow-down" width="24" height="24" />
                     </span>
